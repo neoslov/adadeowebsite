@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adadeo Ltd | Software Engineering & Quality Assurance</title>
+    <title>Adadeo Ltd | QA Consulting & Software Test Engineering</title>
     <style>
         :root {
             --bg-color: #0f172a;
@@ -13,6 +13,7 @@
             --accent-color: #38bdf8;
             --accent-hover: #0ea5e9;
             --border-color: #334155;
+            --success-color: #22c55e;
         }
 
         * {
@@ -27,6 +28,7 @@
             color: var(--text-primary);
             line-height: 1.6;
             padding: 0 20px;
+            scroll-behavior: smooth;
         }
 
         header {
@@ -155,6 +157,62 @@
             font-family: monospace;
         }
 
+        /* Interactive Barcode Demo Styles */
+        .demo-box {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 16px;
+        }
+
+        .sample-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+        }
+
+        .sample-btn {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .sample-btn:hover {
+            background: rgba(56, 189, 248, 0.2);
+        }
+
+        .demo-result {
+            background: var(--bg-color);
+            border-left: 4px solid var(--accent-color);
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #0f172a;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 16px;
+            transition: background 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-hover);
+        }
+
         .footer {
             max-width: 900px;
             margin: 0 auto;
@@ -193,57 +251,87 @@
     <header>
         <div class="logo">Adadeo<span>.</span></div>
         <nav>
-            <a href="#services">Contracting</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact & Legal</a>
+            <a href="#services">QA Consulting</a>
+            <a href="#projects">Upcoming App</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <main>
-        <!-- Hero / Contracting Section -->
+        <!-- Hero / QA Consulting Section -->
         <section class="hero" id="services">
-            <div class="badge">Software Engineering & QA Contracting</div>
-            <h1>Reliable Engineering & Automated Quality Assurance</h1>
-            <p>Adadeo Ltd provides specialized technical consulting, rigorous software test engineering, and robust backend development services for modern digital platforms.</p>
+            <div class="badge">QA Consulting & Software Test Engineering</div>
+            <h1>AI-Driven Test Automation & Quality Assurance</h1>
+            <p>Adadeo Ltd is an Irish-registered technical consultancy delivering high-precision test engineering, AI-powered test automation strategies, and resilient backend integrations for modern software products.</p>
             
             <div class="grid">
                 <div class="card">
-                    <h3>Test Automation & QA</h3>
-                    <p>Designing comprehensive automated regression suites, API testing frameworks, and continuous integration testing pipelines.</p>
+                    <h3>AI-Powered Test Automation</h3>
+                    <p>Leveraging modern AI tooling and smart scripting to build robust automated regression suites, continuous integration testing pipelines, and rapid API validation frameworks.</p>
                 </div>
                 <div class="card">
-                    <h3>Backend Architecture</h3>
-                    <p>Building high-performance, scalable data pipelines and backend microservices using modern architectures.</p>
+                    <h3>Backend Architecture & APIs</h3>
+                    <p>Designing high-performance backend microservices, data pipelines, and secure cloud endpoints utilizing modern toolchains like Python, FastAPI, and PostgreSQL.</p>
                 </div>
             </div>
 
             <div class="tag-list">
+                <span class="tag">AI-Assisted Testing</span>
+                <span class="tag">Test Automation</span>
                 <span class="tag">Python</span>
                 <span class="tag">FastAPI</span>
                 <span class="tag">PostgreSQL</span>
-                <span class="tag">Docker</span>
                 <span class="tag">CI/CD Pipelines</span>
-                <span class="tag">API Test Automation</span>
             </div>
+
+            <a href="mailto:support@adadeo.com" class="cta-button">Inquire for QA Consulting</a>
         </section>
 
-        <!-- Projects Section (secye placeholder) -->
+        <!-- Projects Section / App Store Reviewer Focus -->
         <section id="projects">
-            <h2>Current Initiatives</h2>
+            <h2>Upcoming Mobile Application</h2>
             <div class="card">
-                <h3>secye (In Development)</h3>
-                <p>An upcoming mobile application exploring efficient data analysis and consumer utility. Built natively with React Native and modern cloud backends. Stay tuned for official releases on the App Store and Google Play.</p>
+                <h3>secye (In Development for App Store & Google Play)</h3>
+                <p><em>secye</em> is an upcoming native mobile application built with React Native and powered by asynchronous backend microservices. Designed for efficient product lookup and consumer utility, it is currently preparing for official release across the Apple App Store and Google Play Store.</p>
+                
+                <div class="demo-box">
+                    <p style="font-size: 13px; margin-bottom: 8px; color: var(--text-primary);"><strong>Interactive API Preview:</strong> Test a sample product lookup lookup simulation</p>
+                    <div class="sample-buttons">
+                        <button class="sample-btn" onclick="lookupBarcode('5449000000996', 'Coca-Cola Regular (330ml)', 'Brands: The Coca-Cola Company • Status: Verified')">Test Barcode A</button>
+                        <button class="sample-btn" onclick="lookupBarcode('7613036881729', 'Dark Chocolate 85%', 'Brands: Lindt • Status: Verified')">Test Barcode B</button>
+                    </div>
+                    <div id="demoResult" class="demo-result"></div>
+                </div>
             </div>
         </section>
 
-        <!-- Contact & App Store Compliance / Privacy Policy Section -->
-        <section id="contact">
-            <h2>Support & Legal Information</h2>
+        <!-- Dedicated Privacy Policy Section for Store Verification -->
+        <section id="privacy">
+            <h2>Privacy Policy</h2>
             <div class="card">
-                <p><strong>Company Registration:</strong> Adadeo Ltd (Registered in Ireland)</p>
-                <p><strong>Director:</strong> John [Last Name]</p>
-                <p><strong>Support Contact:</strong> <a href="mailto:support@adadeo.com" style="color: var(--accent-color);">support@adadeo.com</a></p>
-                <p style="margin-top: 16px;"><strong>Privacy Policy:</strong> Adadeo Ltd respects user privacy. Our mobile applications process data securely and do not share personal user details with third parties. For specific data removal requests or support inquiries, please reach out via the email address above.</p>
+                <p><strong>Effective Date:</strong> August 26, 2026</p>
+                <p>Adadeo Ltd ("we", "our", or "us") respects your privacy and is committed to protecting your personal data. This privacy policy applies to our mobile applications (including upcoming releases such as <em>secye</em>) and our corporate digital presence.</p>
+                
+                <h3 style="margin-top: 16px; font-size: 16px;">Data Collection & Usage</h3>
+                <p>Our applications are designed with privacy in mind. Any local history, preferences, or scan logs are stored securely on your device. We do not sell, rent, or trade user data to third parties.</p>
+
+                <h3 style="margin-top: 16px; font-size: 16px;">Third-Party Services</h3>
+                <p>Where applications interact with open public databases (such as product lookup APIs) or handle authorized subscription state (such as RevenueCat), data transmitted is strictly limited to functional operational requirements.</p>
+
+                <h3 style="margin-top: 16px; font-size: 16px;">Contact Us</h3>
+                <p>If you have any questions about this Privacy Policy or wish to request data removal support, please contact us at <a href="mailto:support@adadeo.com" style="color: var(--accent-color);">support@adadeo.com</a>.</p>
+            </div>
+        </section>
+
+        <!-- Contact & Corporate Info Section -->
+        <section id="contact">
+            <h2>Corporate & Contact Information</h2>
+            <div class="card">
+                <p><strong>Company Name:</strong> Adadeo Ltd</p>
+                <p><strong>Registration Location:</strong> Ireland</p>
+                <p><strong>Director:</strong> Sole Director</p>
+                <p><strong>Business & Support Inquiries:</strong> <a href="mailto:support@adadeo.com" style="color: var(--accent-color);">support@adadeo.com</a></p>
             </div>
         </section>
     </main>
@@ -251,11 +339,18 @@
     <footer class="footer">
         <div>&copy; 2026 Adadeo Ltd. All rights reserved.</div>
         <div class="footer-links">
-            <a href="#contact">Privacy Policy</a>
-            <a href="#contact">Terms of Service</a>
-            <a href="#contact">Support</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#contact">Contact</a>
         </div>
     </footer>
+
+    <script>
+        function lookupBarcode(barcode, name, details) {
+            const resultBox = document.getElementById('demoResult');
+            resultBox.style.display = 'block';
+            resultBox.innerHTML = `<strong>Barcode:</strong> ${barcode}<br><strong>Product:</strong> ${name}<br><span style="color: var(--accent-color);">${details}</span>`;
+        }
+    </script>
 
 </body>
 </html>
