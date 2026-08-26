@@ -3,14 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>adadeo.ie</title>
+    <title>Adadeo Ltd | Software Engineering & Quality Assurance</title>
     <style>
-        body { font-family: sans-serif; text-align: center; padding: 50px; background: #f4f4f9; }
-        h1 { color: #333; }
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --border-color: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        header {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 0 40px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--text-primary);
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        .hero {
+            padding: 40px 0;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-family: monospace;
+        }
+
+        .footer {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 32px; }
+            header { flex-direction: column; align-items: flex-start; gap: 16px; }
+            nav a { margin-left: 0; margin-right: 16px; }
+        }
     </style>
 </head>
 <body>
-    <h1>Welcome to adadeo.ie</h1>
-    <p>Site is currently under construction. Check back soon!</p>
+
+    <header>
+        <div class="logo">Adadeo<span>.</span></div>
+        <nav>
+            <a href="#services">Contracting</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact & Legal</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero / Contracting Section -->
+        <section class="hero" id="services">
+            <div class="badge">Software Engineering & QA Contracting</div>
+            <h1>Reliable Engineering & Automated Quality Assurance</h1>
+            <p>Adadeo Ltd provides specialized technical consulting, rigorous software test engineering, and robust backend development services for modern digital platforms.</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Test Automation & QA</h3>
+                    <p>Designing comprehensive automated regression suites, API testing frameworks, and continuous integration testing pipelines.</p>
+                </div>
+                <div class="card">
+                    <h3>Backend Architecture</h3>
+                    <p>Building high-performance, scalable data pipelines and backend microservices using modern architectures.</p>
+                </div>
+            </div>
+
+            <div class="tag-list">
+                <span class="tag">Python</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Docker</span>
+                <span class="tag">CI/CD Pipelines</span>
+                <span class="tag">API Test Automation</span>
+            </div>
+        </section>
+
+        <!-- Projects Section (secye placeholder) -->
+        <section id="projects">
+            <h2>Current Initiatives</h2>
+            <div class="card">
+                <h3>secye (In Development)</h3>
+                <p>An upcoming mobile application exploring efficient data analysis and consumer utility. Built natively with React Native and modern cloud backends. Stay tuned for official releases on the App Store and Google Play.</p>
+            </div>
+        </section>
+
+        <!-- Contact & App Store Compliance / Privacy Policy Section -->
+        <section id="contact">
+            <h2>Support & Legal Information</h2>
+            <div class="card">
+                <p><strong>Company Registration:</strong> Adadeo Ltd (Registered in Ireland)</p>
+                <p><strong>Director:</strong> John [Last Name]</p>
+                <p><strong>Support Contact:</strong> <a href="mailto:support@adadeo.com" style="color: var(--accent-color);">support@adadeo.com</a></p>
+                <p style="margin-top: 16px;"><strong>Privacy Policy:</strong> Adadeo Ltd respects user privacy. Our mobile applications process data securely and do not share personal user details with third parties. For specific data removal requests or support inquiries, please reach out via the email address above.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div>&copy; 2026 Adadeo Ltd. All rights reserved.</div>
+        <div class="footer-links">
+            <a href="#contact">Privacy Policy</a>
+            <a href="#contact">Terms of Service</a>
+            <a href="#contact">Support</a>
+        </div>
+    </footer>
+
 </body>
 </html>
