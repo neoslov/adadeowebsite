@@ -15,13 +15,11 @@
             --border-color: #334155;
             --success-color: #22c55e;
         }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
@@ -30,7 +28,6 @@
             padding: 0 20px;
             scroll-behavior: smooth;
         }
-
         header {
             max-width: 900px;
             margin: 0 auto;
@@ -40,18 +37,15 @@
             align-items: center;
             border-bottom: 1px solid var(--border-color);
         }
-
         .logo {
             font-size: 24px;
             font-weight: 700;
             letter-spacing: -0.5px;
             color: var(--text-primary);
         }
-
         .logo span {
             color: var(--accent-color);
         }
-
         nav a {
             color: var(--text-secondary);
             text-decoration: none;
@@ -59,50 +53,41 @@
             font-size: 14px;
             transition: color 0.2s;
         }
-
         nav a:hover {
             color: var(--accent-color);
         }
-
         main {
             max-width: 900px;
             margin: 0 auto;
             padding: 40px 0;
         }
-
         section {
             margin-bottom: 60px;
         }
-
         h1 {
             font-size: 42px;
             font-weight: 800;
             letter-spacing: -1px;
             margin-bottom: 16px;
         }
-
         h2 {
             font-size: 28px;
             font-weight: 700;
             margin-bottom: 20px;
             letter-spacing: -0.5px;
         }
-
         p {
             color: var(--text-secondary);
             font-size: 16px;
             margin-bottom: 16px;
         }
-
         .hero {
             padding: 40px 0;
         }
-
         .hero p {
             font-size: 18px;
             max-width: 700px;
         }
-
         .badge {
             display: inline-block;
             background: rgba(56, 189, 248, 0.1);
@@ -114,14 +99,12 @@
             margin-bottom: 16px;
             border: 1px solid rgba(56, 189, 248, 0.2);
         }
-
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
             margin-top: 24px;
         }
-
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -129,25 +112,21 @@
             padding: 24px;
             transition: transform 0.2s, border-color 0.2s;
         }
-
         .card:hover {
             border-color: var(--accent-color);
             transform: translateY(-2px);
         }
-
         .card h3 {
             font-size: 18px;
             margin-bottom: 10px;
             color: var(--text-primary);
         }
-
         .tag-list {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
             margin-top: 16px;
         }
-
         .tag {
             background: rgba(255, 255, 255, 0.05);
             color: var(--text-secondary);
@@ -156,8 +135,6 @@
             font-size: 12px;
             font-family: monospace;
         }
-
-        /* Interactive Barcode Demo Styles */
         .demo-box {
             background: rgba(15, 23, 42, 0.6);
             border: 1px solid var(--border-color);
@@ -165,14 +142,12 @@
             padding: 16px;
             margin-top: 16px;
         }
-
         .sample-buttons {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
             margin-bottom: 14px;
         }
-
         .sample-btn {
             background: rgba(56, 189, 248, 0.1);
             color: var(--accent-color);
@@ -183,11 +158,9 @@
             cursor: pointer;
             transition: background 0.2s;
         }
-
         .sample-btn:hover {
             background: rgba(56, 189, 248, 0.2);
         }
-
         .demo-result {
             background: var(--bg-color);
             border-left: 4px solid var(--accent-color);
@@ -195,8 +168,8 @@
             border-radius: 4px;
             font-size: 14px;
             display: none;
+            margin-top: 10px;
         }
-
         .cta-button {
             display: inline-block;
             background-color: var(--accent-color);
@@ -208,11 +181,9 @@
             margin-top: 16px;
             transition: background 0.2s;
         }
-
         .cta-button:hover {
             background-color: var(--accent-hover);
         }
-
         .footer {
             max-width: 900px;
             margin: 0 auto;
@@ -224,21 +195,17 @@
             font-size: 14px;
             color: var(--text-secondary);
         }
-
         .footer-links {
             display: flex;
             gap: 20px;
         }
-
         .footer-links a {
             color: var(--text-secondary);
             text-decoration: none;
         }
-
         .footer-links a:hover {
             color: var(--accent-color);
         }
-
         @media (max-width: 600px) {
             h1 { font-size: 32px; }
             header { flex-direction: column; align-items: flex-start; gap: 16px; }
@@ -247,7 +214,6 @@
     </style>
 </head>
 <body>
-
     <header>
         <div class="logo">Adadeo<span>.</span></div>
         <nav>
@@ -275,7 +241,7 @@
                     <p>Designing high-performance backend microservices, data pipelines, and secure cloud endpoints utilizing modern toolchains like Python, FastAPI, and PostgreSQL.</p>
                 </div>
             </div>
-
+            
             <div class="tag-list">
                 <span class="tag">AI-Assisted Testing</span>
                 <span class="tag">Test Automation</span>
@@ -284,7 +250,6 @@
                 <span class="tag">PostgreSQL</span>
                 <span class="tag">CI/CD Pipelines</span>
             </div>
-
             <a href="mailto:info@adadeo.ie" class="cta-button">Inquire for QA Consulting</a>
         </section>
 
@@ -296,7 +261,7 @@
                 <p><em>secye</em> is an upcoming native mobile application built with React Native and powered by asynchronous backend microservices. Designed for efficient product lookup and consumer utility, it is currently preparing for official release across the Apple App Store and Google Play Store.</p>
                 
                 <div class="demo-box">
-                    <p style="font-size: 13px; margin-bottom: 8px; color: var(--text-primary);"><strong>Interactive API Preview:</strong> Test a sample product lookup lookup simulation</p>
+                    <p style="font-size: 13px; margin-bottom: 8px; color: var(--text-primary);"><strong>Interactive API Preview:</strong> Test a sample product lookup simulation</p>
                     <div class="sample-buttons">
                         <button class="sample-btn" onclick="lookupBarcode('5449000000996', 'Coca-Cola Regular (330ml)', 'Brands: The Coca-Cola Company • Status: Verified')">Test Barcode A</button>
                         <button class="sample-btn" onclick="lookupBarcode('7613036881729', 'Dark Chocolate 85%', 'Brands: Lindt • Status: Verified')">Test Barcode B</button>
@@ -311,46 +276,3 @@
             <h2>Privacy Policy</h2>
             <div class="card">
                 <p><strong>Effective Date:</strong> August 26, 2026</p>
-                <p>Adadeo Ltd ("we", "our", or "us") respects your privacy and is committed to protecting your personal data. This privacy policy applies to our mobile applications (including upcoming releases such as <em>secye</em>) and our corporate digital presence.</p>
-                
-                <h3 style="margin-top: 16px; font-size: 16px;">Data Collection & Usage</h3>
-                <p>Our applications are designed with privacy in mind. Any local history, preferences, or scan logs are stored securely on your device. We do not sell, rent, or trade user data to third parties.</p>
-
-                <h3 style="margin-top: 16px; font-size: 16px;">Third-Party Services</h3>
-                <p>Where applications interact with open public databases (such as product lookup APIs) or handle authorized subscription state (such as RevenueCat), data transmitted is strictly limited to functional operational requirements.</p>
-
-                <h3 style="margin-top: 16px; font-size: 16px;">Contact Us</h3>
-                <p>If you have any questions about this Privacy Policy or wish to request data removal support, please contact us at <a href="mailto:info@adadeo.ie" style="color: var(--accent-color);">info@adadeo.ie</a>.</p>
-            </div>
-        </section>
-
-        <!-- Contact & Corporate Info Section -->
-        <section id="contact">
-            <h2>Corporate & Contact Information</h2>
-            <div class="card">
-                <p><strong>Company Name:</strong> Adadeo Ltd</p>
-                <p><strong>Registration Location:</strong> Ireland</p>
-                <p><strong>Director:</strong> Sole Director</p>
-                <p><strong>Business & Support Inquiries:</strong> <a href="mailto:info@adadeo.ie" style="color: var(--accent-color);">info@adadeo.ie</a></p>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div>&copy; 2026 Adadeo Ltd. All rights reserved.</div>
-        <div class="footer-links">
-            <a href="#privacy">Privacy Policy</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </footer>
-
-    <script>
-        function lookupBarcode(barcode, name, details) {
-            const resultBox = document.getElementById('demoResult');
-            resultBox.style.display = 'block';
-            resultBox.innerHTML = `<strong>Barcode:</strong> ${barcode}<br><strong>Product:</strong> ${name}<br><span style="color: var(--accent-color);">${details}</span>`;
-        }
-    </script>
-
-</body>
-</html>
