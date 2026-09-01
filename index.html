@@ -135,41 +135,6 @@
             font-size: 12px;
             font-family: monospace;
         }
-        .demo-box {
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 16px;
-            margin-top: 16px;
-        }
-        .sample-buttons {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 14px;
-        }
-        .sample-btn {
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent-color);
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 13px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .sample-btn:hover {
-            background: rgba(56, 189, 248, 0.2);
-        }
-        .demo-result {
-            background: var(--bg-color);
-            border-left: 4px solid var(--accent-color);
-            padding: 12px;
-            border-radius: 4px;
-            font-size: 14px;
-            display: none;
-            margin-top: 10px;
-        }
         .cta-button {
             display: inline-block;
             background-color: var(--accent-color);
@@ -259,15 +224,6 @@
             <div class="card">
                 <h3>secye (In Development for App Store & Google Play)</h3>
                 <p><em>secye</em> is an upcoming native mobile application built with React Native and powered by asynchronous backend microservices. Designed for efficient product lookup and consumer utility, it is currently preparing for official release across the Apple App Store and Google Play Store.</p>
-                
-                <div class="demo-box">
-                    <p style="font-size: 13px; margin-bottom: 8px; color: var(--text-primary);"><strong>Interactive API Preview:</strong> Test a sample product lookup simulation</p>
-                    <div class="sample-buttons">
-                        <button class="sample-btn" onclick="lookupBarcode('5449000000996', 'Coca-Cola Regular (330ml)', 'Brands: The Coca-Cola Company • Status: Verified')">Test Barcode A</button>
-                        <button class="sample-btn" onclick="lookupBarcode('7613036881729', 'Dark Chocolate 85%', 'Brands: Lindt • Status: Verified')">Test Barcode B</button>
-                    </div>
-                    <div id="demoResult" class="demo-result"></div>
-                </div>
             </div>
         </section>
 
@@ -276,3 +232,30 @@
             <h2>Privacy Policy</h2>
             <div class="card">
                 <p><strong>Effective Date:</strong> August 26, 2026</p>
+                <p>Adadeo Ltd ("we", "our", or "us") respects your privacy and is committed to protecting your personal data. This privacy policy applies to our mobile applications (including upcoming releases such as <em>secye</em>) and our corporate digital presence.</p>
+                <h3 style="margin-top: 16px; font-size: 16px;">Data Collection & Usage</h3>
+                <p>Our applications are designed with privacy in mind. Any local history, preferences, or scan logs are stored securely on your device. We do not sell, rent, or trade user data to third parties.</p>
+                <h3 style="margin-top: 16px; font-size: 16px;">Third-Party Services</h3>
+                <p>Where applications interact with open public databases (such as product lookup APIs) or handle authorized subscription state (such as RevenueCat), data transmitted is strictly limited to functional operational requirements.</p>
+                <h3 style="margin-top: 16px; font-size: 16px;">Contact Us</h3>
+                <p>If you have any questions about this Privacy Policy or wish to request data removal support, please contact us at <a href="mailto:info@adadeo.ie" style="color: var(--accent-color);">info@adadeo.ie</a>.</p>
+            </div>
+        </section>
+
+        <!-- Contact & Corporate Info Section -->
+        <section id="contact">
+            <h2>Corporate & Contact Information</h2>
+            <div class="card">
+                <p><strong>Company Name:</strong> Adadeo Ltd</p>
+                <p><strong>Registered Location:</strong> Ireland</p>
+                <p><strong>Contact Email:</strong> <a href="mailto:info@adadeo.ie" style="color: var(--accent-color);">info@adadeo.ie</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#privacy">Privacy Policy</a>
+        </div>
