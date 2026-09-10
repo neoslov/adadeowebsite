@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adadeo Ltd | QA Consulting &amp; Secye App</title>
-    <meta name="description" content="Adadeo Ltd — Irish QA consulting and software test engineering, and the Secye food scanning app.">
+    <title>QA Consulting | Adadeo Ltd</title>
+    <meta name="description" content="Adadeo Ltd — AI-driven test automation and quality assurance consulting. Test automation, API validation, and resilient backend integrations.">
     <style>
         :root {
             --bg-color: #0f172a;
@@ -39,12 +39,15 @@
             margin-left: 24px; font-size: 14px; transition: color 0.2s;
         }
         nav a:hover, nav a:focus { color: var(--accent-color); }
+        nav a.active { color: var(--accent-color); }
         main { max-width: 900px; margin: 0 auto; padding: 40px 0; }
         section { margin-bottom: 60px; scroll-margin-top: 20px; }
         h1 { font-size: 42px; font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; }
         h2 { font-size: 28px; font-weight: 700; margin-bottom: 20px; letter-spacing: -0.5px; padding-top: 8px; }
         h3 { font-size: 18px; margin-bottom: 10px; color: var(--text-primary); }
         p { color: var(--text-secondary); font-size: 16px; margin-bottom: 16px; }
+        ul { color: var(--text-secondary); font-size: 16px; margin: 0 0 16px 22px; }
+        li { margin-bottom: 8px; }
         a { color: var(--accent-color); }
         strong { color: var(--text-primary); }
         .hero { padding: 40px 0; }
@@ -60,12 +63,15 @@
         }
         .card {
             background-color: var(--card-bg); border: 1px solid var(--border-color);
-            border-radius: 12px; padding: 24px; text-decoration: none; display: block;
-            transition: transform 0.2s, border-color 0.2s;
+            border-radius: 12px; padding: 24px;
         }
-        .card:hover { border-color: var(--accent-color); transform: translateY(-2px); }
-        .card .card-paragraph { color: var(--text-secondary); font-size: 16px; }
-        .card-link { display: inline-block; margin-top: 12px; font-weight: 600; }
+        .card.interactive { transition: transform 0.2s, border-color 0.2s; }
+        .card.interactive:hover { border-color: var(--accent-color); transform: translateY(-2px); }
+        .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+        .tag {
+            background: rgba(255, 255, 255, 0.05); color: var(--text-secondary);
+            padding: 4px 10px; border-radius: 6px; font-size: 12px; font-family: monospace;
+        }
         .cta-button {
             display: inline-block; background-color: var(--accent-color); color: #0f172a;
             padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none;
@@ -94,31 +100,38 @@
     <header>
         <a class="logo" href="index.html">Adadeo<span>.</span></a>
         <nav>
-            <a href="qa.html">QA Consulting</a>
+            <a href="index.html">Home</a>
+            <a href="qa.html" class="active">QA Consulting</a>
             <a href="secye.html">Secye App</a>
         </nav>
     </header>
 
     <main>
-        <section class="hero" id="home">
-            <div class="badge">Adadeo Ltd — Irish registered company</div>
-            <h1>Quality engineering, done properly.</h1>
-            <p>Adadeo Ltd is a technical consultancy delivering software quality assurance, test automation and reliable product engineering. We also build Secye, a food-scanning app that tells you what is really inside a product.</p>
+        <section class="hero" id="services">
+            <div class="badge">QA Consulting &amp; Software Test Engineering</div>
+            <h1>AI-Driven Test Automation &amp; Quality Assurance</h1>
+            <p>Adadeo Ltd is an Irish-registered technical consultancy delivering high-precision test engineering, AI-powered test automation strategies, and resilient backend integrations for modern software products.</p>
 
             <div class="grid">
-                <a class="card" href="qa.html">
-                    <h3>QA Consulting</h3>
-                    <p class="card-paragraph">AI-assisted test automation, API validation and CI/CD quality engineering for software teams.</p>
-                    <span class="card-link">Explore services →</span>
-                </a>
-                <a class="card" href="secye.html">
-                    <h3>Secye — Food Label Scanner</h3>
-                    <p class="card-paragraph">Scan a barcode, get a Nutri-Score grade, UPF assessment and additive breakdown while you stand in the aisle.</p>
-                    <span class="card-link">About the app →</span>
-                </a>
+                <div class="card interactive">
+                    <h3>AI-Powered Test Automation</h3>
+                    <p>Leveraging modern AI tooling and smart scripting to build robust automated regression suites, continuous integration testing pipelines, and rapid API validation frameworks.</p>
+                </div>
+                <div class="card interactive">
+                    <h3>Backend Architecture &amp; APIs</h3>
+                    <p>Designing high-performance backend microservices, data pipelines, and secure cloud endpoints utilizing modern toolchains like Python, FastAPI, and PostgreSQL.</p>
+                </div>
             </div>
 
-            <a href="mailto:info@adadeo.ie" class="cta-button">Contact Adadeo</a>
+            <div class="tag-list">
+                <span class="tag">AI-Assisted Testing</span>
+                <span class="tag">Test Automation</span>
+                <span class="tag">Python</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">CI/CD Pipelines</span>
+            </div>
+            <a href="mailto:info@adadeo.ie" class="cta-button">Inquire for QA Consulting</a>
         </section>
     </main>
 
