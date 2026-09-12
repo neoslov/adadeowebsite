@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secye — Gizlilik Politikası &amp; KVKK | Adadeo Ltd</title>
+    <meta name="description" content="Secye — iOS ve Android için yiyecek etiketi tarayıcı. Nutri-Score notları, ultra işlenmiş gıda (UPF) değerlendirmesi ve katkı maddeleri. Gizlilik politikası, KVKK aydınlatma metni, kullanım koşulları, sağlık uyarısı, hesap silme ve destek.">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --border-color: #334155;
+            --warn-bg: rgba(251, 191, 36, 0.08);
+            --warn-border: rgba(251, 191, 36, 0.35);
+            --warn-text: #fbbf24;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 0 20px;
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+        header {
+            max-width: 900px; margin: 0 auto; padding: 60px 0 40px 0;
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .logo { font-size: 24px; font-weight: 700; letter-spacing: -0.5px; color: var(--text-primary); text-decoration: none; }
+        .logo span { color: var(--accent-color); }
+        nav a {
+            color: var(--text-secondary); text-decoration: none;
+            margin-left: 24px; font-size: 14px; transition: color 0.2s;
+        }
+        nav a:hover, nav a:focus { color: var(--accent-color); }
+        nav a.active { color: var(--accent-color); }
+        main { max-width: 900px; margin: 0 auto; padding: 40px 0; }
+        section { margin-bottom: 60px; scroll-margin-top: 20px; }
+        h1 { font-size: 42px; font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; }
+        h2 { font-size: 28px; font-weight: 700; margin-bottom: 20px; letter-spacing: -0.5px; padding-top: 8px; }
+        h3 { font-size: 18px; margin-bottom: 10px; color: var(--text-primary); }
+        h4 { font-size: 16px; margin: 20px 0 8px 0; color: var(--text-primary); }
+        p { color: var(--text-secondary); font-size: 16px; margin-bottom: 16px; }
+        ul { color: var(--text-secondary); font-size: 16px; margin: 0 0 16px 22px; }
+        li { margin-bottom: 8px; }
+        a { color: var(--accent-color); }
+        strong { color: var(--text-primary); }
+        .hero { padding: 20px 0 40px 0; }
+        .hero p { font-size: 18px; max-width: 700px; }
+        .badge {
+            display: inline-block; background: rgba(56, 189, 248, 0.1); color: var(--accent-color);
+            padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: 600;
+            margin-bottom: 16px; border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+        .card {
+            background-color: var(--card-bg); border: 1px solid var(--border-color);
+            border-radius: 12px; padding: 24px;
+        }
+        .notice {
+            background: var(--warn-bg); border: 1px solid var(--warn-border);
+            border-radius: 10px; padding: 18px; margin-bottom: 24px;
+        }
+        .notice p { color: var(--text-primary); margin-bottom: 8px; }
+        .notice p:last-child { margin-bottom: 0; }
+        .notice strong { color: var(--warn-text); }
+        table { width: 100%; border-collapse: collapse; margin: 8px 0 20px 0; font-size: 15px; }
+        th, td {
+            text-align: left; padding: 10px 12px;
+            border-bottom: 1px solid var(--border-color); vertical-align: top;
+        }
+        th { color: var(--text-primary); font-weight: 600; font-size: 14px; }
+        td { color: var(--text-secondary); }
+        .table-wrap { overflow-x: auto; }
+        .legal-nav { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0 40px 0; }
+        .legal-nav a {
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            padding: 8px 14px; border-radius: 8px; font-size: 14px;
+            text-decoration: none; color: var(--text-secondary); transition: all 0.2s;
+        }
+        .legal-nav a:hover { border-color: var(--accent-color); color: var(--accent-color); }
+        .meta {
+            font-size: 14px; color: var(--text-secondary);
+            padding-bottom: 12px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color);
+        }
+        .footer {
+            max-width: 900px; margin: 0 auto; padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            display: flex; flex-direction: column; gap: 16px;
+            font-size: 14px; color: var(--text-secondary);
+        }
+        .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; }
+        .footer-links a:hover { color: var(--accent-color); }
+        @media (max-width: 600px) {
+            h1 { font-size: 32px; }
+            h2 { font-size: 24px; }
+            header { flex-direction: column; align-items: flex-start; gap: 16px; padding-top: 40px; }
+            nav { display: flex; flex-wrap: wrap; gap: 8px 0; }
+            nav a { margin-left: 0; margin-right: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a class="logo" href="index.html">Adadeo<span>.</span></a>
+        <nav>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="qa.html">QA Danışmanlık</a>
+            <a href="secye-tr.html" class="active">Secye Uygulaması</a>
+            <a href="secye.html">English</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ============================================================
+             SECYE UYGULAMASI
+             ============================================================ -->
+        <section class="hero" id="secye">
+            <div class="badge">Secye — Yiyecek Etiketi Tarayıcı</div>
+            <h1>Yediğiniz gıdanın içinde gerçekte ne olduğunu öğrenin.</h1>
+            <p><strong>Secye</strong>, iOS ve Android için gıda ürünlerinin barkodlarını tarayan ve besin bilgileri, Nutri-Score notu, ultra işlenmiş gıda (UPF) değerlendirmesi ve katkı maddesi listesi sunan bir mobil uygulamadır — böylece mağaza koridorunda dururken ürünün içinde ne olduğunu anlayabilirsiniz.</p>
+            <p>Ürün verileri, topluluk tarafından bakımı yapılan açık bir veritabanı olan <a href="https://world.openfoodfacts.org/" rel="noopener">Open Food Facts</a>'ten, kullanıcılarımızın gönderdiği ve tarafımızca incelenen düzeltmelerle birlikte sağlanmaktadır.</p>
+            <p>Secye, Adadeo Ltd tarafından yayınlanmaktadır. Aşağıdaki belgeler kullanımını yönetir.</p>
+        </section>
+
+        <!-- ============================================================
+             HUKUKİ
+             ============================================================ -->
+        <section id="legal">
+            <h2>Yasal &amp; Destek</h2>
+
+            <div class="legal-nav">
+                <a href="#privacy">Gizlilik Politikası &amp; KVKK</a>
+                <a href="#terms">Kullanım Koşulları</a>
+                <a href="#disclaimer">Sağlık &amp; Beslenme Uyarısı</a>
+                <a href="#delete-account">Hesabınızı Silme</a>
+                <a href="#support">Destek</a>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             GİZLİLİK POLİTİKASI & KVKK
+             ============================================================ -->
+        <section id="privacy">
+            <h2>Gizlilik Politikası &amp; KVKK Aydınlatma Metni</h2>
+            <div class="card">
+                <p class="meta">
+                    <strong>Geçerli olduğu yerler:</strong> Secye mobil uygulaması ve adadeo.ie<br>
+                    <strong>Yürürlük tarihi:</strong> 14 Eylül 2026 &nbsp;·&nbsp; <strong>Son güncelleme:</strong> 14 Eylül 2026<br>
+                    <strong>Veri sorumlusu:</strong> Adadeo Ltd, The Arch, Northgate Street, Athenry, Co. Galway, H65 YK54, İrlanda. Şirket no. 706941.
+                </p>
+
+                <p>Adadeo Ltd ("biz", "bizim") Secye mobil uygulamasını işletmektedir. Bu politika hangi kişisel verileri topladığımızı, neden, ne kadar süre sakladığımızı ve bu veriler üzerindeki haklarınızı açıklar. Kişisel verilerinizi satmaz, kiralamaz veya ticarete konu etmeyiz ve reklam amacıyla kullanmayız.</p>
+
+                <h4>1. Hesap oluşturmadan Secye'yi kullanma</h4>
+                <p>Hesap oluşturmadan ürün tarayabilir ve Secye'yi kullanabilirsiniz. Bu durumda tarama geçmişiniz, favorileriniz ve alışveriş listeniz <strong>yalnızca cihazınızda</strong> saklanır ve bize gönderilmez.</p>
+                <p>Ürün kataloğunu işletmek ve iyileştirmek için taramalar hakkında sınırlı, kimliği belirlemeyen bilgiler kaydederiz — aşağıdaki "Tarama analizi" bölümüne bakınız. Bu bilgiler size veya herhangi bir hesaba bağlanmaz.</p>
+
+                <h4>2. Hesap oluşturduğunuzda topladığımız veriler</h4>
+                <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Veri</th><th>Neden saklarız</th><th>Hukuki sebep (KVKK m.5 / GDPR)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>E-posta adresi</td>
+                            <td>Hesabınızı tanımlamak ve giriş yapmanızı sağlamak</td>
+                            <td>Sözleşmenin ifası</td>
+                        </tr>
+                        <tr>
+                            <td>Parola</td>
+                            <td>Yalnızca tuzlanmış bcrypt özeti olarak saklanır. Gerçek parolanızı asla saklamaz veya okuyamayız.</td>
+                            <td>Sözleşmenin ifası</td>
+                        </tr>
+                        <tr>
+                            <td>Hesap oluşturma tarihi</td>
+                            <td>Hesap yönetimi ve kötüye kullanımın önlenmesi</td>
+                            <td>Meşru menfaat</td>
+                        </tr>
+                        <tr>
+                            <td>Favoriler, tarama geçmişi ve alışveriş listesi</td>
+                            <td>Listelerinizin cihazlar arasında sizi takip etmesi ve uygulamayı yeniden kurduğunuzda korunması. Her kayıt bir ürünün barkodu ile o ürünün kamuya açık bilgilerinin önbelleğe alınmış bir kopyasıdır.</td>
+                            <td>Sözleşmenin ifası</td>
+                        </tr>
+                        <tr>
+                            <td>Gönderdiğiniz ürün düzeltmeleri</td>
+                            <td>Tüm kullanıcılar için katalog doğruluğunu incelemek ve iyileştirmek</td>
+                            <td>Meşru menfaat</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+
+                <h4>3. Tarama analizi</h4>
+                <p>Bir barkod sorgulandığında, barkodu, bir eşleşme bulunup bulunmadığını, cihaz işletim sistemini ve uygulama sürümünü kaydederiz. Bunları kataloğumuzda eksik olan ürünleri bulmak ve başarısız sorguları düzeltmek için kullanırız.</p>
+                <p><strong>Bu kayıtlar hesabınıza veya herhangi bir kullanıcı tanımlayıcısına bağlı değildir</strong> ve sizi yeniden tanımlamaya çalışmayız. Hukuki sebep: hizmetin işletilmesi ve iyileştirilmesindeki meşru menfaatimiz.</p>
+
+                <h4>4. Yalnızca cihazınızda saklanan veriler</h4>
+                <p>Aşağıdakiler telefonunuzdan asla ayrılmaz: dil tercihiniz, günlük tarama sayacınız, yerel olarak önbelleğe alınan listeleriniz ve cihaz anahtar kasanızda (iOS) veya güvenli bölgenizde (Android) tutulan oturum anahtarınız. Uygulamayı silmek tüm bunları kaldırır.</p>
+
+                <h4>5. Verilerinizi kimlerle paylaşırız</h4>
+                <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Alıcı</th><th>Ne alırlar</th><th>Amaç</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Open Food Facts</td>
+                            <td>Taradığınız barkod. Hesap verisi, cihaz tanımlayıcısı yok.</td>
+                            <td>Kamuya açık ürün bilgilerinin aranması</td>
+                        </tr>
+                        <tr>
+                            <td>RevenueCat</td>
+                            <td>Rastgele üretilmiş bir hesap tanımlayıcısı ve satın alma durumunuz. <strong>E-posta adresiniz değil.</strong></td>
+                            <td>Aboneliklerin yönetilmesi ve satın alımların geri yüklenmesi</td>
+                        </tr>
+                        <tr>
+                            <td>Apple / Google</td>
+                            <td>Ödeme ve abonelik bilgileri, tamamen uygulama mağazası tarafından işlenir.</td>
+                            <td>Abonelik ödemelerinin işlenmesi. Kart bilgilerinizi asla görmeyiz.</td>
+                        </tr>
+                        <tr>
+                            <td>Sentry</td>
+                            <td>Çökme ve hata raporları. Kişisel veri, istek gövdesi veya IP adresi göndermeyecek şekilde yapılandırılmıştır.</td>
+                            <td>Çökmelerin ve arızaların teşhisi</td>
+                        </tr>
+                        <tr>
+                            <td>Hetzner Online GmbH</td>
+                            <td>Sunucularımızı ve veritabanımızı barındırır; AB içinde.</td>
+                            <td>Altyapı</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                <p>Reklam ağları veya üçüncü taraf izleme ya da analiz SDK'ları kullanmayız.</p>
+
+                <h4>6. Uluslararası aktarımlar</h4>
+                <p>Sunucularımız ve veritabanımız Avrupa Birliği içinde konumlanmıştır. Yukarıda listelenen bazı işleyiciler AEA dışında veri işleyebilir; bu durumda aktarımlar Avrupa Komisyonu'nun Standart Sözleşme Maddeleri veya bir yeterlilik kararı kapsamındadır. Türkiye'deki kullanıcıların verilerinin yurt dışına aktarımında, geçerli durumda 6698 sayılı KVKK'nın 9. maddesi uyarınca yeterli koruma tedbirleri alınır.</p>
+
+                <h4>7. Verilerinizi ne kadar süre saklarız</h4>
+                <ul>
+                    <li><strong>Hesap verileri, favoriler, geçmiş ve alışveriş listesi</strong> — hesabınızı silene kadar; sildikten sonra hemen silinir.</li>
+                    <li><strong>Tarama analizi</strong> — kimliği belirlemeyen biçimde en fazla 24 ay saklanır.</li>
+                    <li><strong>Ürün düzeltmeleri</strong> — katalogun parçası olarak süresiz saklanır; incelendikten sonra kimliğinizle bağlantısı kesilir.</li>
+                </ul>
+
+                <h4>8. Haklarınız</h4>
+                <p>KVKK m.11 ve GDPR uyarınca verilerinize erişme, düzeltme, silme, işlenmesini kısıtlama veya itiraz etme ve taşınabilir bir kopyasını alma haklarına sahipsiniz. Bunlardan herhangi birini kullanmak için <a href="mailto:info@adadeo.ie">info@adadeo.ie</a> adresine e-posta gönderin. Bir ay içinde yanıt veririz.</p>
+                <p>Hesabınızı ve tüm ilgili verileri istediğiniz zaman uygulama içinden silebilirsiniz — bkz. <a href="#delete-account">Hesabınızı Silme</a>.</p>
+                <p>Verilerinizin hukuka aykırı işlendiğini düşünüyorsanız Kişisel Verileri Koruma Kurumu'na (KVKK m.14) veya İrlanda Veri Koruma Komisyonu'na (<a href="https://www.dataprotection.ie/" rel="noopener">dataprotection.ie</a>) şikâyette bulunabilirsiniz.</p>
+
+                <h4>9. Güvenlik</h4>
+                <p>Uygulama ile sunucularımız arasındaki tüm trafik HTTPS ile şifrelenir. Parolalar yalnızca bcrypt özeti olarak saklanır. Oturum anahtarları genel uygulama depolaması yerine cihaz anahtar kasasında veya güvenli bölgede tutulur. Üretim sistemlerine erişim kısıtlı ve kimlik doğrulamalıdır.</p>
+
+                <h4>10. Çocuklar</h4>
+                <p>Secye çocuklara yönelik değildir ve 16 yaşın altındaki hiç kimse için tasarlanmamıştır. 16 yaşın altındaki çocuklardan bilerek kişisel veri toplamayız. Bir çocuğun bize kişisel veri sağladığını düşünüyorsanız bizimle iletişime geçin; bunları sileriz.</p>
+
+                <h4>11. Bu politikadaki değişiklikler</h4>
+                <p>Maddi değişiklikler yaparsak yukarıdaki "son güncelleme" tarihini günceller ve değişikliğin sizi önemli ölçüde etkilediği durumlarda uygulamada size bildiririz.</p>
+
+                <h4>12. İletişim</h4>
+                <p>Adadeo Ltd, The Arch, Northgate Street, Athenry, Co. Galway, H65 YK54, İrlanda — <a href="mailto:info@adadeo.ie">info@adadeo.ie</a></p>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             KULLANIM KOŞULLARI
+             ============================================================ -->
+        <section id="terms">
+            <h2>Kullanım Koşulları</h2>
+            <div class="card">
+                <p class="meta">
+                    <strong>Yürürlük tarihi:</strong> 14 Eylül 2026<br>
+                    Bu koşullar sizinle Adadeo Ltd arasında bir sözleşme oluşturur: The Arch, Northgate Street, Athenry, Co. Galway, H65 YK54, İrlanda, şirket no. 706941.
+                </p>
+
+                <h4>1. Kabul</h4>
+                <p>Secye'yi indirerek veya kullanarak bu koşulları ve <a href="#privacy">Gizlilik Politikası</a>'nı kabul etmiş olursunuz. Kabul etmiyorsanız uygulamayı kullanmayın.</p>
+
+                <h4>2. Uygunluk</h4>
+                <p>Hesap oluşturmak için en az 16 yaşında olmanız gerekir.</p>
+
+                <h4>3. Hesabınız</h4>
+                <p>Parolanızı gizli tutmaktan ve hesabınız altındaki etkinliklerden siz sorumlusunuz. Parolanızın tehlikeye girdiğini düşünüyorsanız derhâl <a href="mailto:info@adadeo.ie">info@adadeo.ie</a> adresine bildirin. Hesabınızı uygulamanın Ayarlar ekranından istediğiniz zaman silebilirsiniz.</p>
+
+                <h4>4. Kabul edilebilir kullanım</h4>
+                <p>Şunları yapmamayı kabul edersiniz:</p>
+                <ul>
+                    <li>yanlış, yanıltıcı veya kasten hatalı ürün bilgisi göndermek;</li>
+                    <li>hizmete otomatik yollarla erişmek veya kataloğumuzu kazımaya (scraping) ya da toplu indirmeye çalışmak;</li>
+                    <li>hizmete müdahale etmek, aşırı yüklemek veya yetkisiz erişim sağlamaya çalışmak;</li>
+                    <li>hizmeti yasa dışı şekilde veya başka birinin haklarını ihlal ederek kullanmak.</li>
+                </ul>
+
+                <h4>5. Gönderdiğiniz içerik</h4>
+                <p>Bir ürün düzeltmesi veya yeni ürün girdisi gönderdiğinizde, Adadeo Ltd'ye bu katkıyı katalogun parçası olarak kullanma, saklama, uyarlama ve yayınlama konusunda münhasır olmayan, dünya genelinde geçerli, telif ücretsiz bir lisans vermiş olursunuz. Bunu göndermeye hakkınız olduğunu onaylarsınız. Gönderimler yayından önce incelenir, ancak her gönderimin kabul edileceğini garanti etmeyiz.</p>
+
+                <h4>6. Abonelikler ve ödeme</h4>
+                <ul>
+                    <li>Secye, günlük tarama limiti olan ücretsiz bir katman ve bu limiti kaldıran isteğe bağlı ücretli bir abonelik sunar.</li>
+                    <li>Abonelikler bizim tarafımızdan değil, Apple App Store veya Google Play tarafından satılır ve işlenir. Fiyatlar ve mevcut planlar satın almadan önce uygulamada gösterilir.</li>
+                    <li><strong>Abonelikler otomatik olarak yenilenir</strong>; otomatik yenileme, geçerli dönemin sonundan en az 24 saat önce kapatılmadıkça hesabınız, geçerli dönemin sonundan sonraki 24 saat içinde yeniden ücretlendirilir.</li>
+                    <li>Aboneliğinizi Apple ID veya Google Play hesap ayarlarınızdan yönetin veya iptal edin. Uygulamayı silmek aboneliğinizi iptal etmez.</li>
+                    <li>İadeler Apple veya Google'ın politikaları uyarınca bunlar tarafından işlenir. Mağaza satın alımları için doğrudan iade yapamayız.</li>
+                    <li>Yeni bir cihazda mevcut bir aboneliği uygulamanın Ayarlar ekranından geri yükleyebilirsiniz.</li>
+                </ul>
+
+                <h4>7. Ürün bilgisi ve doğruluk</h4>
+                <p>Ürün verileri büyük ölçüde Open Food Facts adlı topluluk tarafından bakımı yapılan bir veritabanından ve kullanıcı gönderimlerinden gelir. Eksik, güncel değil veya hatalı olabilir. Lütfen <a href="#disclaimer">Sağlık &amp; Beslenme Uyarısı</a>'nı okuyun — bu koşulların bir parçasıdır.</p>
+
+                <h4>8. Kullanılabilirlik</h4>
+                <p>Secye'yi kullanılabilir tutmayı hedefliyoruz ancak kesintisiz hizmet garanti etmiyoruz. Özellikleri istediğimiz zaman değiştirebilir, askıya alabilir veya sonlandırabiliriz. Bir değişiklik, önceden satın aldığınız ücretli bir özelliği maddi olarak azalttığında size bildiririz.</p>
+
+                <h4>9. Fikri mülkiyet</h4>
+                <p>Secye adı, uygulaması, tasarımı ve özgün içeriği Adadeo Ltd'ye aittir. Open Food Facts verileri Open Database License (ODbL) altında kullanılır.</p>
+
+                <h4>10. Garantilerin reddi</h4>
+                <p>Yasanın izin verdiği azami ölçüde Secye "olduğu gibi" ve "mevcut olduğu şekliyle" sağlanır; belirli bir amaca uygunluk ve bilgi doğruluğu dahil, açık veya zımni hiçbir garanti yoktur.</p>
+
+                <h4>11. Sorumluluk sınırı</h4>
+                <p>Yasanın izin verdiği azami ölçüde Adadeo Ltd, dolaylı veya sonuçsal kayıplardan veya uygulamadaki ürün bilgisine güvenmekten doğan kayıplardan sorumlu değildir. Bu koşullar, ihmâlden kaynaklanan ölüm veya kişisel yaralanma, dolandırıcılık veya yasal olarak sınırlandırılamayan başka herhangi bir şey için sorumluluğu sınırlamaz. Tüketici olarak yasal haklarınız etkilenmez.</p>
+
+                <h4>12. Fesih</h4>
+                <p>Secye kullanmayı bırakabilir ve hesabınızı istediğiniz zaman silebilirsiniz. Bu koşulları ihlal eden bir hesabı askıya alabilir veya sonlandırabiliriz.</p>
+
+                <h4>13. Uygulanacak hukuk</h4>
+                <p>Bu koşullar İrlanda yasalarına tabidir ve İrlanda mahkemeleri yetkilidir. AB'de başka bir yerde ikamet eden bir tüketiciyseniz, ikamet ettiğiniz ülkenin zorunlu tüketici hukukunun korumasını korursunuz.</p>
+
+                <h4>14. Değişiklikler</h4>
+                <p>Bu koşulları güncelleyebiliriz. Maddi değişiklikler yürürlüğe girmeden önce uygulamada veya e-posta ile bildirilir.</p>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SAĞLIK UYARISI
+             ============================================================ -->
+        <section id="disclaimer">
+            <h2>Sağlık &amp; Beslenme Uyarısı</h2>
+            <div class="card">
+                <div class="notice">
+                    <p><strong>Secye tıbbi, diyetsel veya sağlık tavsiyesi sunmaz.</strong> Yalnızca bilgilendirme ve eğitim aracıdır.</p>
+                </div>
+
+                <h4>Alerjiler ve intoleranslar</h4>
+                <p><strong>Bir ürünün alerji veya intolerans açısından güvenli olup olmadığına karar vermek için asla Secye'ye güvenmeyin.</strong> İçerik ve alerjen verileri eksik, güncel değil veya hatalı olabilir ve üreticiler tarifleri haber vermeden değiştirebilir. Her zaman ambalajın üzerindeki fiziksel etiketi okuyun ve doktorunuzun veya diyetisyeninizin tavsiyesine uyun. Şiddetli bir alerjiniz varsa uygulamanın bilgilerini doğrulanmamış kabul edin.</p>
+
+                <h4>Skorlar ve derecelendirmeler</h4>
+                <p>Secye'de gösterilen Nutri-Score notları, ultra işlenmiş gıda (UPF) değerlendirmesi, katkı maddesi risk düzeyleri ve enerji yoğunluğu notları, mevcut beslenme verilerinden üretilen otomatik hesaplamalardır. Bunlar:</p>
+                <ul>
+                    <li>yalnızca bilgilendirme ve eğitim amaçlıdır;</li>
+                    <li>tanı, tedavi, reçete veya diyet planı değildir;</li>
+                    <li>nitelikli bir sağlık profesyonelinin tavsiyesinin yerine geçmez;</li>
+                    <li>bir ürünün <em>sizin için</em>, tıbbi durumlarınız, ilaçlarınız, alerjileriniz veya beslenme gereksinimleriniz için uygun olup olmadığına dair bir değerlendirme değildir.</li>
+                </ul>
+                <p>Nutri-Score, harici kamu sağlığı kuruluşları tarafından geliştirilen bir ön yüz (front-of-pack) etiketleme sistemidir. Uygulamamız kendi yorumumuzdur ve ambalajda gösterilen resmî skordan farklı olabilir.</p>
+
+                <h4>Veri doğruluğu</h4>
+                <p>Ürün bilgileri büyük ölçüde Open Food Facts adlı topluluk tarafından bakımı yapılan açık bir veritabanından gelir ve kullanıcı gönderimleriyle desteklenir. Her girişi bağımsız olarak doğrulamayız. Ürün verileri eksik veya kısmi olduğunda skorlar kullanılamayabilir veya yanıltıcı olabilir.</p>
+
+                <h4>Tıbbi bir durumunuz varsa</h4>
+                <p>Hamileyseniz; diyabet, çölyak hastalığı, böbrek hastalığı veya hipertansiyon gibi bir durumu yönetiyorsanız veya klinik bir diyet uyguluyorsanız, Secye'de gösterilen hiçbir şeye dayanarak değişiklik yapmadan önce doktorunuza veya kayıtlı bir diyetisyene danışın. Bu uygulamada okuduğunuz bir şey nedeniyle profesyonel tıbbi tavsiyeyi asla ihmal etmeyin veya geciktirmeyin.</p>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             HESAP SİLME  (Google Play için gereken herkese açık URL)
+             ============================================================ -->
+        <section id="delete-account">
+            <h2>Hesabınızı Silme</h2>
+            <div class="card">
+                <p>Secye hesabınızı ve onunla ilişkili tüm verileri istediğiniz zaman kalıcı olarak silebilirsiniz.</p>
+
+                <h4>Uygulama içinden</h4>
+                <ul>
+                    <li><strong>Secye</strong> uygulamasını açın ve <strong>Ayarlar</strong> sekmesine gidin.</li>
+                    <li>Oturum açtığınızdan emin olun.</li>
+                    <li><strong>Tehlikeli Bölge</strong> altındaki <strong>Hesabı Sil</strong> seçeneğine dokunun.</li>
+                    <li>Onaylayın. Hesabınız anında silinir ve oturumunuz kapatılır.</li>
+                </ul>
+
+                <h4>E-posta ile</h4>
+                <p>Uygulamaya erişemiyorsanız, hesabınıza kayıtlı adresten <a href="mailto:info@adadeo.ie">info@adadeo.ie</a> adresine e-posta gönderin ve hesabınızın silinmesini isteyin. Silme işlemini 30 gün içinde tamamlar ve tamamlandığında doğrularız.</p>
+
+                <h4>Neler silinir</h4>
+                <p>Hesap kaydınız, e-posta adresiniz, parola özetiniz, favorileriniz, tarama geçmişiniz ve alışveriş listeniz kalıcı olarak silinir ve kurtarılamaz.</p>
+
+                <h4>Neler saklanır</h4>
+                <ul>
+                    <li><strong>Kimliği belirlemeyen tarama analizi</strong> — barkod, eşleşme sonucu, cihaz işletim sistemi ve uygulama sürümü. Bunlar asla hesabınıza bağlanmadığından size kadar izlenemez ve silinmez.</li>
+                    <li><strong>Gönderdiğiniz ürün düzeltmeleri</strong> — kimliğinizle bağlantısı olmaksızın paylaşılan katalogun parçası olarak saklanır.</li>
+                    <li><strong>Aboneliğiniz</strong> — hesabınızı silmeniz etkin bir aboneliği <em>iptal etmez</em>. Apple ID veya Google Play hesap ayarlarınızdan iptal edin.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             DESTEK
+             ============================================================ -->
+        <section id="support">
+            <h2>Destek</h2>
+            <div class="card">
+                <p>Sorular, hata bildirimleri, hatalı ürün verileri, gizlilik talepleri veya başka herhangi bir konu — <a href="mailto:info@adadeo.ie">info@adadeo.ie</a> adresine e-posta gönderin. 2 iş günü içinde yanıtlamayı hedefliyoruz.</p>
+
+                <h4>Hatalı ürün verisi bildirme</h4>
+                <p>En hızlı yol uygulamadır: ürünü açın ve <strong>Hatalı bilgi veya eksik veri bildir</strong> seçeneğine dokunun. Bildirimler bir inceleme kuyruğuna gider. Henüz sahip olmadığımız bir ürünü de <strong>Eksik Ürün Ekle</strong> ile ekleyebilirsiniz.</p>
+
+                <h4>Şirket bilgileri</h4>
+                <p>
+                    <strong>Adadeo Ltd</strong><br>
+                    The Arch, Northgate Street, Athenry, Co. Galway, H65 YK54, İrlanda<br>
+                    Şirket kayıt no. 706941<br>
+                    E-posta: <a href="mailto:info@adadeo.ie">info@adadeo.ie</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="qa.html">QA Danışmanlık</a>
+            <a href="secye.html">Secye Uygulaması</a>
+            <a href="#privacy">Gizlilik Politikası &amp; KVKK</a>
+            <a href="#terms">Kullanım Koşulları</a>
+            <a href="#disclaimer">Sağlık Uyarısı</a>
+            <a href="#delete-account">Hesabı Sil</a>
+            <a href="#support">Destek</a>
+        </div>
+        <div>© <span id="year">2026</span> Adadeo Ltd. İrlanda'da kayıtlıdır. Ürün verileri Open Food Facts'ten ODbL altında sağlanmaktadır.</div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
