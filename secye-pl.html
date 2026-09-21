@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secye — Polityka prywatności | Adadeo Ltd</title>
+    <meta name="description" content="Secye — skaner etykiet żywności na iOS i Android. Oceny Nutri-Score, ocena ultra-przetworzonej żywności (UPF) i dodatki. Polityka prywatności, regulamin, zastrzeżenie zdrowotne, usuwanie konta i wsparcie.">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --border-color: #334155;
+            --warn-bg: rgba(251, 191, 36, 0.08);
+            --warn-border: rgba(251, 191, 36, 0.35);
+            --warn-text: #fbbf24;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 0 20px;
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+        header {
+            max-width: 900px; margin: 0 auto; padding: 60px 0 40px 0;
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .logo { font-size: 24px; font-weight: 700; letter-spacing: -0.5px; color: var(--text-primary); text-decoration: none; }
+        .logo span { color: var(--accent-color); }
+        nav a {
+            color: var(--text-secondary); text-decoration: none;
+            margin-left: 24px; font-size: 14px; transition: color 0.2s;
+        }
+        nav a:hover, nav a:focus { color: var(--accent-color); }
+        nav a.active { color: var(--accent-color); }
+        .lang-switch { border-left: 1px solid var(--border-color); padding-left: 24px; margin-left: 24px; }
+        .lang-switch a { margin-left: 0; margin-right: 14px; }
+        main { max-width: 900px; margin: 0 auto; padding: 40px 0; }
+        section { margin-bottom: 60px; scroll-margin-top: 20px; }
+        h1 { font-size: 42px; font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; }
+        h2 { font-size: 28px; font-weight: 700; margin-bottom: 20px; letter-spacing: -0.5px; padding-top: 8px; }
+        h3 { font-size: 18px; margin-bottom: 10px; color: var(--text-primary); }
+        h4 { font-size: 16px; margin: 20px 0 8px 0; color: var(--text-primary); }
+        p { color: var(--text-secondary); font-size: 16px; margin-bottom: 16px; }
+        ul { color: var(--text-secondary); font-size: 16px; margin: 0 0 16px 22px; }
+        li { margin-bottom: 8px; }
+        a { color: var(--accent-color); }
+        strong { color: var(--text-primary); }
+        .hero { padding: 20px 0 40px 0; }
+        .hero p { font-size: 18px; max-width: 700px; }
+        .badge {
+            display: inline-block; background: rgba(56, 189, 248, 0.1); color: var(--accent-color);
+            padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: 600;
+            margin-bottom: 16px; border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+        .card {
+            background-color: var(--card-bg); border: 1px solid var(--border-color);
+            border-radius: 12px; padding: 24px;
+        }
+        .notice {
+            background: var(--warn-bg); border: 1px solid var(--warn-border);
+            border-radius: 10px; padding: 18px; margin-bottom: 24px;
+        }
+        .notice p { color: var(--text-primary); margin-bottom: 8px; }
+        .notice p:last-child { margin-bottom: 0; }
+        .notice strong { color: var(--warn-text); }
+        table { width: 100%; border-collapse: collapse; margin: 8px 0 20px 0; font-size: 15px; }
+        th, td {
+            text-align: left; padding: 10px 12px;
+            border-bottom: 1px solid var(--border-color); vertical-align: top;
+        }
+        th { color: var(--text-primary); font-weight: 600; font-size: 14px; }
+        td { color: var(--text-secondary); }
+        .table-wrap { overflow-x: auto; }
+        .legal-nav { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0 40px 0; }
+        .legal-nav a {
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            padding: 8px 14px; border-radius: 8px; font-size: 14px;
+            text-decoration: none; color: var(--text-secondary); transition: all 0.2s;
+        }
+        .legal-nav a:hover { border-color: var(--accent-color); color: var(--accent-color); }
+        .meta {
+            font-size: 14px; color: var(--text-secondary);
+            padding-bottom: 12px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color);
+        }
+        .lang-banner {
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            border-radius: 10px; padding: 12px 16px; margin-bottom: 8px;
+            display: none; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+        }
+        .lang-banner p { margin: 0; font-size: 14px; color: var(--text-primary); }
+        .lang-banner a { white-space: nowrap; text-decoration: none; font-size: 14px; }
+        .footer {
+            max-width: 900px; margin: 0 auto; padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            display: flex; flex-direction: column; gap: 16px;
+            font-size: 14px; color: var(--text-secondary);
+        }
+        .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; }
+        .footer-links a:hover { color: var(--accent-color); }
+        @media (max-width: 600px) {
+            h1 { font-size: 32px; }
+            h2 { font-size: 24px; }
+            header { flex-direction: column; align-items: flex-start; gap: 16px; padding-top: 40px; }
+            nav { display: flex; flex-wrap: wrap; gap: 8px 0; }
+            nav a { margin-left: 0; margin-right: 16px; }
+            .lang-switch { border-left: none; padding-left: 0; margin-left: 0; }
+        }
+    </style>
+</head>
+<body data-page-lang="pl">
+    <header>
+        <a class="logo" href="index.html">Adadeo<span>.</span></a>
+        <nav>
+            <a href="index.html">Strona główna</a>
+            <a href="qa.html">Konsulting QA</a>
+            <a href="secye-pl.html" class="active">Aplikacja Secye</a>
+            <span class="lang-switch">
+                <a href="secye.html" data-lang-link="en">English</a>
+                <a href="secye-tr.html" data-lang-link="tr">Türkçe</a>
+                <a href="secye-pl.html" data-lang-link="pl" class="active">Polski</a>
+            </span>
+        </nav>
+    </header>
+
+    <div class="lang-banner" id="lang-banner" role="region" aria-label="Wybór języka" hidden>
+        <p id="lang-banner-text"></p>
+        <span style="display:inline-flex;gap:16px;align-items:center;flex-wrap:wrap;">
+            <a href="#" id="lang-banner-link">Zobacz tę stronę</a>
+            <a href="#" data-lang-dismiss aria-label="Zostań na tej stronie">✕</a>
+        </span>
+    </div>
+
+    <main>
+        <!-- ============================================================
+             APLIKACJA SECYE
+             ============================================================ -->
+        <section class="hero" id="secye">
+            <div class="badge">Secye — Skaner Etykiet Żywności</div>
+            <h1>Dowiedz się, co naprawdę znajduje się w twojej żywności.</h1>
+            <p><strong>Secye</strong> to aplikacja mobilna na iOS i Androida, która skanuje kody kreskowe produktów spożywczych i przedstawia informacje o wartości odżywczej, ocenę Nutri-Score, ocenę ultra-przetworzonej żywności (UPF) oraz listę dodatków, abyś mógł zrozumieć, co znajduje się w produkcie, gdy stoisz przed półką sklepową.</p>
+            <p>Dane o produktach pochodzą z <a href="https://world.openfoodfacts.org/" rel="noopener" hreflang="en">Open Food Facts</a>, otwartej bazy danych utrzymywanej przez społeczność, oraz z poprawek zgłaszanych przez naszych użytkowników i weryfikowanych przez nas.</p>
+            <p>Secye jest publikowane przez Adadeo Ltd. Poniższe dokumenty regulują korzystanie z aplikacji.</p>
+        </section>
+
+        <!-- ============================================================
+             PRAWNE
+             ============================================================ -->
+        <section id="legal">
+            <h2>Dokumenty prawne &amp; wsparcie</h2>
+
+            <div class="legal-nav">
+                <a href="#privacy">Polityka prywatności</a>
+                <a href="#terms">Regulamin</a>
+                <a href="#disclaimer">Zastrzeżenie zdrowotne</a>
+                <a href="#delete-account">Usunięcie konta</a>
+                <a href="#support">Wsparcie</a>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             POLITYKA PRYWATNOŚCI
+             ============================================================ -->
+        <section id="privacy">
+            <h2>Polityka prywatności</h2>
+            <div class="card">
+                <p class="meta">
+                    <strong>Dotyczy:</strong> aplikacji mobilnej Secye oraz adadeo.ie<br>
+                    <strong>Data wejścia w życie:</strong> 14 września 2026 &nbsp;·&nbsp; <strong>Ostatnia aktualizacja:</strong> 14 września 2026<br>
+                    <strong>Administrator danych:</strong> Adadeo Ltd, The Arch, Northgate Street, Athenry, Co. Galway, H65 YK54, Irlandia. Nr spółki 706941.
+                </p>
+
+                <p>Adadeo Ltd („my”, „nas”) prowadzi aplikację mobilną Secye. Niniejsza polityka wyjaśnia, jakie dane osobowe zbieramy, dlaczego, jak długo je przechowujemy oraz jakie masz do nich prawa. Nie sprzedajemy, nie wynajmujemy ani nie wymieniamy Twoich danych osobowych i nie wykorzystujemy ich do reklamy.</p>
+
+                <h4>1. Korzystanie z Secye bez konta</h4>
+                <p>Możesz skanować produkty i korzystać z Secye bez zakładania konta. W takim przypadku Twoja historia skanów, ulubione i lista zakupów są przechowywane <strong>wyłącznie na Twoim urządzeniu</strong> i nie są do nas wysyłane.</p>
+                <p>Rejestrujemy jednak ograniczone, nieidentyfikujące informacje o skanach, aby obsługiwać i ulepszać katalog produktów — patrz „Analityka skanów” poniżej. Nie są one powiązane z Tobą ani z żadnym kontem.</p>
+
+                <h4>2. Dane, które zbieramy, gdy tworzysz konto</h4>
+                <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Dane</th><th>Dlaczego je przechowujemy</th><th>Podstawa prawna (RODO)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Adres e-mail</td>
+                            <td>Aby identyfikować Twoje konto i umożliwić logowanie</td>
+                            <td>Wykonanie umowy</td>
+                        </tr>
+                        <tr>
+                            <td>Hasło</td>
+                            <td>Przechowywane wyłącznie jako zasolony skrót bcrypt. Nigdy nie przechowujemy ani nie możemy odczytać Twojego rzeczywistego hasła.</td>
+                            <td>Wykonanie umowy</td>
+                        </tr>
+                        <tr>
+                            <td>Data utworzenia konta</td>
+                            <td>Administracja kontem i zapobieganie nadużyciom</td>
+                            <td>Uzasadniony interes</td>
+                        </tr>
+                        <tr>
+                            <td>Ulubione, historia skanów i lista zakupów</td>
+                            <td>Aby Twoje listy mogły Cię podążać między urządzeniami i przetrwać ponowną instalację aplikacji. Każdy wpis to kod kreskowy produktu plus buforowana kopia publicznych informacji o tym produkcie.</td>
+                            <td>Wykonanie umowy</td>
+                        </tr>
+                        <tr>
+                            <td>Zgłaszane przez Ciebie poprawki produktów</td>
+                            <td>Aby przeglądać i poprawiać dokładność katalogu dla wszystkich użytkowników</td>
+                            <td>Uzasadniony interes</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+
+                <h4>3. Analityka skanów</h4>
+                <p>Gdy kod kreskowy jest wyszukiwany, rejestrujemy kod kreskowy, to, czy znaleźliśmy dopasowanie, system operacyjny urządzenia i wersję aplikacji. Wykorzystujemy to do znajdowania produktów, których brakuje w naszym katalogu, oraz do naprawiania nieudanych wyszukiwań.</p>
+                <p><strong>Te rekordy nie są powiązane z Twoim kontem ani z żadnym identyfikatorem użytkownika</strong> i nie próbujemy ich ponownie identyfikować. Podstawa prawna: uzasadniony interes w obsłudze i ulepszaniu usługi.</p>
+
+                <h4>4. Dane przechowywane wyłącznie na Twoim urządzeniu</h4>
+                <p>Następujące dane nigdy nie opuszczają Twojego telefonu: preferencja językowa, dzienny licznik skanów, lokalnie buforowane listy oraz token logowania, przechowywany w łańcuchu kluczy (iOS) lub magazynie kluczy (Android). Usunięcie aplikacji usuwa wszystkie te dane.</p>
+
+                <h4>5. Komu udostępniamy dane</h4>
+                <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Odbiorca</th><th>Co otrzymuje</th><th>Cel</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Open Food Facts</td>
+                            <td>Kod kreskowy, który skanujesz. Żadnych danych o koncie, żadnego identyfikatora urządzenia.</td>
+                            <td>Wyszukiwanie publicznych informacji o produkcie</td>
+                        </tr>
+                        <tr>
+                            <td>RevenueCat</td>
+                            <td>Losowo wygenerowany identyfikator konta oraz status Twojego zakupu. <strong>Nie jest to Twój adres e-mail.</strong></td>
+                            <td>Zarządzanie subskrypcjami i przywracanie zakupów</td>
+                        </tr>
+                        <tr>
+                            <td>Apple / Google</td>
+                            <td>Szczegóły płatności i subskrypcji, obsługiwane w całości przez sklep z aplikacjami.</td>
+                            <td>Przetwarzanie płatności subskrypcyjnych. Nigdy nie widzimy danych Twojej karty.</td>
+                        </tr>
+                        <tr>
+                            <td>Sentry</td>
+                            <td>Raporty o awariach i błędach. Skonfigurowane tak, aby nie wysyłać danych osobowych, treści żądań ani adresów IP.</td>
+                            <td>Diagnozowanie awarii i usterek</td>
+                        </tr>
+                        <tr>
+                            <td>Hetzner Online GmbH</td>
+                            <td>Hosting naszych serwerów i bazy danych, w obrębie UE.</td>
+                            <td>Infrastruktura</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                <p>Nie korzystamy z sieci reklamowych ani z SDK śledzenia lub analityki stron trzecich.</p>
+
+                <h4>6. Przekazywanie danych za granicę</h4>
+                <p>Nasze serwery i baza danych znajdują się w Unii Europejskiej. Niektórzy z wymienionych powyżej podmiotów przetwarzających mogą przetwarzać dane poza EOG; w takich przypadkach przekazanie odbywa się na podstawie standardowych klauzul umownych Komisji Europejskiej lub decyzji o adekwatności.</p>
+
+                <h4>7. Jak długo przechowujemy dane</h4>
+                <ul>
+                    <li><strong>Dane konta, ulubione, historia i lista zakupów</strong> — do czasu usunięcia konta, po czym są natychmiast usuwane.</li>
+                    <li><strong>Analityka skanów</strong> — przechowywana w formie nieidentyfikującej przez maksymalnie 24 miesiące.</li>
+                    <li><strong>Poprawki produktów</strong> — przechowywane bezterminowo jako część katalogu, bez powiązania z Twoją tożsamością po weryfikacji.</li>
+                </ul>
+
+                <h4>8. Twoje prawa</h4>
+                <p>Na podstawie RODO masz prawo dostępu do swoich danych, ich poprawiania, usuwania, ograniczania lub kwestionowania przetwarzania oraz otrzymania kopii w formacie przenośnym. Aby skorzystać z któregokolwiek z tych praw, napisz na <a href="mailto:info@adadeo.ie">info@adadeo.ie</a>. Odpowiemy w ciągu miesiąca.</p>
+                <p>Możesz usunąć swoje konto i wszystkie powiązane dane w dowolnym momencie bezpośrednio w aplikacji — patrz <a href="#delete-account">Usunięcie konta</a>.</p>
+                <p>Jeśli uważasz, że nieprawidłowo przetwarzamy Twoje dane, możesz złożyć skargę do irlandzkiego Urzędu Ochrony Danych Osobowych (<a href="https://www.dataprotection.ie/" rel="noopener">dataprotection.ie</a>) lub do polskiego Prezesa Urzędu Ochrony Danych Osobowych (<a href="https://uodo.gov.pl/" rel="noopener">uodo.gov.pl</a>).</p>
+
+                <h4>9. Bezpieczeństwo</h4>
+                <p>Cały ruch między aplikacją a naszymi serwerami jest szyfrowany protokołem HTTPS. Hasła są przechowywane wyłącznie jako skróty bcrypt. Tokeny logowania są przechowywane w łańcuchu kluczy lub magazynie kluczy urządzenia, a nie w ogólnej pamięci aplikacji. Dostęp do systemów produkcyjnych jest ograniczony i uwierzytelniany.</p>
+
+                <h4>10. Dzieci</h4>
+                <p>Secye nie jest skierowane do dzieci ani nie jest przeznaczone dla osób poniżej 16 roku życia. Świadomie nie zbieramy danych osobowych od dzieci poniżej 16 roku życia. Jeśli uważasz, że dziecko przekazało nam dane osobowe, skontaktuj się z nami, a usuniemy je.</p>
+
+                <h4>11. Zmiany w niniejszej polityce</h4>
+                <p>Jeśli wprowadzimy istotne zmiany, zaktualizujemy powyższą „datę ostatniej aktualizacji”, a w przypadku zmian znacząco Cię dotyczących powiadomimy Cię w aplikacji.</p>
+
+                <h4>12. Kontakt</h4>
+                <p>Adadeo Ltd, The Arch, Northgate Street, Athenry, Co. Galway, H65 YK54, Irlandia — <a href="mailto:info@adadeo.ie">info@adadeo.ie</a></p>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             REGULAMIN
+             ============================================================ -->
+        <section id="terms">
+            <h2>Regulamin</h2>
+            <div class="card">
+                <p class="meta">
+                    <strong>Data wejścia w życie:</strong> 14 września 2026<br>
+                    Niniejszy regulamin stanowi umowę między Tobą a Adadeo Ltd, The Arch, Northgate Street, Athenry, Co. Galway, H65 YK54, Irlandia, nr spółki 706941.
+                </p>
+
+                <h4>1. Akceptacja</h4>
+                <p>Pobierając lub korzystając z Secye, akceptujesz niniejszy regulamin i naszą <a href="#privacy">Politykę prywatności</a>. Jeśli się nie zgadzasz, nie korzystaj z aplikacji.</p>
+
+                <h4>2. Uprawnienia</h4>
+                <p>Aby utworzyć konto, musisz mieć ukończone 16 lat.</p>
+
+                <h4>3. Twoje konto</h4>
+                <p>Jesteś odpowiedzialny za zachowanie poufności hasła i za aktywność na swoim koncie. Jeśli uważasz, że zostało ono naruszone, niezwłocznie poinformuj nas na <a href="mailto:info@adadeo.ie">info@adadeo.ie</a>. Możesz usunąć swoje konto w dowolnym momencie z ekranu Ustawienia w aplikacji.</p>
+
+                <h4>4. Dopuszczalne korzystanie</h4>
+                <p>Zgadzasz się nie:</p>
+                <ul>
+                    <li>wprowadzać fałszywych, wprowadzających w błąd lub celowo nieprawidłowych informacji o produktach;</li>
+                    <li>dostępować do usługi automatycznymi środkami ani próbować skrobać lub masowo pobierać naszego katalogu;</li>
+                    <li>ingerować w usługę, przeciążać jej ani próbować uzyskać nieautoryzowanego dostępu do niej lub jej infrastruktury;</li>
+                    <li>wykorzystywać usługi niezgodnie z prawem lub z naruszeniem praw innych osób.</li>
+                </ul>
+
+                <h4>5. Treści, które przekazujesz</h4>
+                <p>Przekazując poprawkę produktu lub nowy wpis produktu, udzielasz Adadeo Ltd niewyłącznej, światowej licencji wolnej od opłat na wykorzystanie, przechowywanie, adaptację i publikację tego wkładu jako części katalogu. Potwierdzasz, że masz prawo go przekazać. Wpisy są weryfikowane przed publikacją, ale nie gwarantujemy, że każdy wpis zostanie zaakceptowany.</p>
+
+                <h4>6. Subskrypcje i płatności</h4>
+                <ul>
+                    <li>Secye oferuje darmowy poziom z dziennym limitem skanów oraz opcjonalną płatną subskrypcją, która go usuwa.</li>
+                    <li>Subskrypcje są sprzedawane i obsługiwane przez Apple App Store lub Google Play, a nie przez nas. Ceny i dostępne plany są pokazywane w aplikacji przed zakupem.</li>
+                    <li><strong>Subskrypcje odnawiają się automatycznie</strong>, chyba że automatyczne odnawianie zostanie wyłączone co najmniej 24 godziny przed końcem bieżącego okresu. Twoje konto jest obciążane za odnowienie w ciągu 24 godzin od końca bieżącego okresu.</li>
+                    <li>Zarządzaj lub anuluj subskrypcję w ustawieniach konta Apple ID lub Google Play. Usunięcie aplikacji nie anuluje subskrypcji.</li>
+                    <li>Zwroty są obsługiwane przez Apple lub Google zgodnie z ich politykami. Nie możemy wystawiać zwrotów za zakupy w sklepach bezpośrednio.</li>
+                    <li>Możesz przywrócić istniejącą subskrypcję na nowym urządzeniu z ekranu Ustawienia w aplikacji.</li>
+                </ul>
+
+                <h4>7. Informacje o produktach i dokładność</h4>
+                <p>Dane o produktach pochodzą w dużej mierze z Open Food Facts, bazy danych utrzymywanej przez społeczność, oraz z wpisów użytkowników. Mogą być niekompletne, nieaktualne lub błędne. Zapoznaj się z <a href="#disclaimer">Zastrzeżeniem zdrowotnym</a> — stanowi ono część niniejszego regulaminu.</p>
+
+                <h4>8. Dostępność</h4>
+                <p>Staramy się utrzymywać Secye w dostępności, ale nie gwarantujemy nieprzerwanego działania. Możemy w dowolnym momencie zmieniać, zawieszać lub wycofywać funkcje. Jeśli zmiana znacząco ograniczy płatną funkcję, którą już kupiłeś, poinformujemy Cię o tym.</p>
+
+                <h4>9. Własność intelektualna</h4>
+                <p>Nazwa Secye, aplikacja, projekt i oryginalne treści należą do Adadeo Ltd. Dane Open Food Facts są wykorzystywane na podstawie Open Database License (ODbL).</p>
+
+                <h4>10. Wyłączenie gwarancji</h4>
+                <p>W najszerszym zakresie dozwolonym przez prawo Secye jest dostarczane „tak jak jest” i „jak dostępne”, bez jakichkolwiek gwarancji, wyraźnych lub dorozumianych, w tym przydatności do określonego celu i dokładności informacji.</p>
+
+                <h4>11. Ograniczenie odpowiedzialności</h4>
+                <p>W najszerszym zakresie dozwolonym przez prawo Adadeo Ltd nie ponosi odpowiedzialności za jakąkolwiek szkodę pośrednią lub następczą ani za szkodę wynikającą z polegania na informacjach o produktach w aplikacji. Niniejszy regulamin nie ogranicza odpowiedzialności za śmierć lub obrażenia cielesne spowodowane zaniedbaniem, za oszustwo ani za cokolwiek, czego nie można zgodnie z prawem ograniczyć. Twoje ustawowe prawa konsumenckie pozostają nienaruszone.</p>
+
+                <h4>12. Wypowiedzenie</h4>
+                <p>Możesz przestać korzystać z Secye i usunąć konto w dowolnym momencie. Możemy zawiesić lub zakończyć działanie konta naruszającego niniejszy regulamin.</p>
+
+                <h4>13. Prawo właściwe</h4>
+                <p>Niniejszy regulamin podlega prawu irlandzkiemu, a sądy Irlandii mają jurysdykcję. Jeśli jesteś konsumentem zamieszkującym gdzie indziej w UE, zachowujesz ochronę bezwzględnie obowiązujących przepisów konsumenckich swojego kraju zamieszkania.</p>
+
+                <h4>14. Zmiany</h4>
+                <p>Możemy aktualizować niniejszy regulamin. O istotnych zmianach poinformujemy w aplikacji lub e-mailem przed ich wejściem w życie.</p>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             ZASTRZEŻENIE ZDROWOTNE
+             ============================================================ -->
+        <section id="disclaimer">
+            <h2>Zastrzeżenie zdrowotne</h2>
+            <div class="card">
+                <div class="notice">
+                    <p><strong>Secye nie udziela porad medycznych, dietetycznych ani zdrowotnych.</strong> Jest to wyłącznie narzędzie informacyjne i edukacyjne.</p>
+                </div>
+
+                <h4>Alergie i nietolerancje</h4>
+                <p><strong>Nigdy nie polegaj na Secye, aby ustalić, czy produkt jest bezpieczny w przypadku alergii lub nietolerancji.</strong> Dane o składnikach i alergenach mogą być niekompletne, nieaktualne lub błędne, a producenci zmieniają receptury bez ostrzeżenia. Zawsze czytaj fizyczną etykietę na opakowaniu i stosuj się do zaleceń lekarza lub dietetyka. Jeśli masz silną alergię, uznaj informacje z aplikacji za niezweryfikowane.</p>
+
+                <h4>Oceny i noty</h4>
+                <p>Oceny Nutri-Score, ocena ultra-przetworzonej żywności (UPF), poziomy ryzyka dodatków i noty gęstości energetycznej pokazywane w Secye są automatycznymi obliczeniami opartymi na dostępnych danych o wartości odżywczej. Są to:</p>
+                <ul>
+                    <li>wyłącznie informacje i cele edukacyjne;</li>
+                    <li>nie stanowią diagnozy, leczenia, recepty ani planu dietetycznego;</li>
+                    <li>nie zastępują porady wykwalifikowanego pracownika służby zdrowia;</li>
+                    <li>nie są oceną tego, czy produkt jest odpowiedni <em>dla Ciebie</em> — przy Twoich schorzeniach, lekach, alergiach lub wymaganiach dietetycznych.</li>
+                </ul>
+                <p>Nutri-Score to system oznakowania front-of-pack opracowany przez zewnętrzne organy ds. zdrowia publicznego. Nasza implementacja jest naszą własną interpretacją i może różnić się od oficjalnej oceny pokazanej na opakowaniu.</p>
+
+                <h4>Dokładność danych</h4>
+                <p>Informacje o produktach pochodzą w dużej mierze z Open Food Facts, otwartej bazy danych utrzymywanej przez społeczność, uzupełnianej wpisami użytkowników. Nie weryfikujemy każdego wpisu niezależnie. Gdy dane o produkcie są niekompletne, oceny mogą być niedostępne lub mylące.</p>
+
+                <h4>Jeśli masz schorzenie</h4>
+                <p>Jeśli jesteś w ciąży, leczysz takie schorzenia jak cukrzyca, celiakia, choroba nerek czy nadciśnienie lub stosujesz dietę kliniczną, skonsultuj się z lekarzem lub zarejestrowanym dietetykiem przed wprowadzeniem zmian na podstawie czegokolwiek pokazanego w Secye. Nigdy nie lekceważ profesjonalnej porady medycznej i nie zwlekaj z jej uzyskaniem z powodu czegoś, co przeczytałeś w tej aplikacji.</p>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             USUNIĘCIE KONTA  (wymagany przez Google Play publiczny URL)
+             ============================================================ -->
+        <section id="delete-account">
+            <h2>Usunięcie konta</h2>
+            <div class="card">
+                <p>Możesz trwale usunąć swoje konto Secye i wszystkie powiązane z nim dane w dowolnym momencie.</p>
+
+                <h4>Z poziomu aplikacji</h4>
+                <ul>
+                    <li>Otwórz <strong>Secye</strong> i przejdź do zakładki <strong>Ustawienia</strong>.</li>
+                    <li>Upewnij się, że jesteś zalogowany.</li>
+                    <li>W sekcji <strong>Strefa ryzyka</strong> dotknij <strong>Usuń konto</strong>.</li>
+                    <li>Potwierdź. Twoje konto zostanie natychmiast usunięte, a Ty zostaniesz wylogowany.</li>
+                </ul>
+
+                <h4>E-mailem</h4>
+                <p>Jeśli nie masz dostępu do aplikacji, napisz z adresu zarejestrowanego na Twoim koncie na <a href="mailto:info@adadeo.ie">info@adadeo.ie</a> i poproś o usunięcie konta. Ukończymy usunięcie w ciągu 30 dni i potwierdzimy jego zakończenie.</p>
+
+                <h4>Co zostaje usunięte</h4>
+                <p>Rekord konta, adres e-mail, skrót hasła, ulubione, historia skanów i lista zakupów zostają trwale usunięte i nie mogą zostać odzyskane.</p>
+
+                <h4>Co zostaje zachowane</h4>
+                <ul>
+                    <li><strong>Nieidentyfikująca analityka skanów</strong> — kod kreskowy, wynik dopasowania, system operacyjny urządzenia i wersja aplikacji. Nigdy nie są one powiązane z Twoim kontem, więc nie można ich prześledzić do Ciebie i nie są usuwane.</li>
+                    <li><strong>Zgłoszone przez Ciebie poprawki produktów</strong> — przechowywane jako część wspólnego katalogu, bez powiązania z Twoją tożsamością.</li>
+                    <li><strong>Twoja subskrypcja</strong> — usunięcie konta <em>nie</em> anuluje aktywnej subskrypcji. Anuluj ją w ustawieniach konta Apple ID lub Google Play.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             WSPARCIE
+             ============================================================ -->
+        <section id="support">
+            <h2>Wsparcie</h2>
+            <div class="card">
+                <p>Pytania, raporty o błędach, nieprawidłowe dane o produktach, żądania prywatności i wszystko inne — napisz na <a href="mailto:info@adadeo.ie">info@adadeo.ie</a>. Staramy się odpowiadać w ciągu 2 dni roboczych.</p>
+
+                <h4>Zgłaszanie nieprawidłowych danych o produkcie</h4>
+                <p>Najszybsza droga prowadzi przez aplikację: otwórz produkt i dotknij <strong>Zgłoś nieprawidłowe informacje lub brakujące dane</strong>. Zgłoszenia trafiają do kolejki weryfikacji. Możesz też dodać produkt, którego jeszcze nie mamy, używając opcji <strong>Dodaj brakujący produkt</strong>.</p>
+
+                <h4>Dane spółki</h4>
+                <p>
+                    <strong>Adadeo Ltd</strong><br>
+                    The Arch, Northgate Street, Athenry, Co. Galway, H65 YK54, Irlandia<br>
+                    Nr rejestracyjny spółki 706941<br>
+                    E-mail: <a href="mailto:info@adadeo.ie">info@adadeo.ie</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="index.html">Strona główna</a>
+            <a href="qa.html">Konsulting QA</a>
+            <a href="secye-pl.html">Aplikacja Secye</a>
+            <a href="#privacy">Polityka prywatności</a>
+            <a href="#terms">Regulamin</a>
+            <a href="#disclaimer">Zastrzeżenie zdrowotne</a>
+            <a href="#delete-account">Usunięcie konta</a>
+            <a href="#support">Wsparcie</a>
+        </div>
+        <div>© <span id="year">2026</span> Adadeo Ltd. Zarejestrowana w Irlandii. Dane o produktach z Open Food Facts na podstawie ODbL.</div>
+    </footer>
+
+    <script src="lang.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

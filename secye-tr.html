@@ -86,6 +86,15 @@
             text-decoration: none; color: var(--text-secondary); transition: all 0.2s;
         }
         .legal-nav a:hover { border-color: var(--accent-color); color: var(--accent-color); }
+        .lang-switch { border-left: 1px solid var(--border-color); padding-left: 24px; margin-left: 24px; }
+        .lang-switch a { margin-left: 0; margin-right: 14px; }
+        .lang-banner {
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            border-radius: 10px; padding: 12px 16px; margin-bottom: 8px;
+            display: none; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+        }
+        .lang-banner p { margin: 0; font-size: 14px; color: var(--text-primary); }
+        .lang-banner a { white-space: nowrap; text-decoration: none; font-size: 14px; }
         .meta {
             font-size: 14px; color: var(--text-secondary);
             padding-bottom: 12px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color);
@@ -105,19 +114,32 @@
             header { flex-direction: column; align-items: flex-start; gap: 16px; padding-top: 40px; }
             nav { display: flex; flex-wrap: wrap; gap: 8px 0; }
             nav a { margin-left: 0; margin-right: 16px; }
+            .lang-switch { border-left: none; padding-left: 0; margin-left: 0; }
         }
     </style>
 </head>
-<body>
+<body data-page-lang="tr">
     <header>
         <a class="logo" href="index.html">Adadeo<span>.</span></a>
         <nav>
             <a href="index.html">Ana Sayfa</a>
             <a href="qa.html">QA Danışmanlık</a>
             <a href="secye-tr.html" class="active">Secye Uygulaması</a>
-            <a href="secye.html">English</a>
+            <span class="lang-switch">
+                <a href="secye.html" data-lang-link="en">English</a>
+                <a href="secye-tr.html" data-lang-link="tr" class="active">Türkçe</a>
+                <a href="secye-pl.html" data-lang-link="pl">Polski</a>
+            </span>
         </nav>
     </header>
+
+    <div class="lang-banner" id="lang-banner" role="region" aria-label="Dil" hidden>
+        <p id="lang-banner-text"></p>
+        <span style="display:inline-flex;gap:16px;align-items:center;flex-wrap:wrap;">
+            <a href="#" id="lang-banner-link"></a>
+            <a href="#" data-lang-dismiss aria-label="Bu sayfada kalın">✕</a>
+        </span>
+    </div>
 
     <main>
         <!-- ============================================================
@@ -439,6 +461,7 @@
         <div>© <span id="year">2026</span> Adadeo Ltd. İrlanda'da kayıtlıdır. Ürün verileri Open Food Facts'ten ODbL altında sağlanmaktadır.</div>
     </footer>
 
+    <script src="lang.js"></script>
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
