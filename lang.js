@@ -1,9 +1,11 @@
 /* Secye — language helper for the legal pages (secye.html / secye-tr.html /
- * secye-pl.html). Serves the visitor the rules in their own language:
+ * secye-pl.html / secye-es.html). Serves the visitor the rules in their own
+ * language:
  *
- *   - each legal page is tagged <body data-page-lang="en|tr|pl">;
- *   - a visitor whose browser language is tr/pl is redirected to the matching
- *     page (the target still opens the same anchor section, e.g. #privacy);
+ *   - each legal page is tagged <body data-page-lang="en|tr|pl|es">;
+ *   - a visitor whose browser language is tr/pl/es is redirected to the
+ *     matching page (the target still opens the same anchor section, e.g.
+ *     #privacy);
  *   - choosing a language via the header switch (or the banner) stores a
  *     preference so we never bounce them again;
  *   - the banner offers the other language when the page language differs
@@ -11,12 +13,13 @@
  *
  * The mapping here mirrors app/core config and the settings screen: one new
  * supported language = one new page (secye-XX.html) + one line below.
+ * tools/check_links.py verifies the pages and anchors stay in sync.
  */
 (function () {
   'use strict';
 
-  var PAGES = { en: 'secye.html', tr: 'secye-tr.html', pl: 'secye-pl.html' };
-  var LABELS = { en: 'English', tr: 'Türkçe', pl: 'Polski' };
+  var PAGES = { en: 'secye.html', tr: 'secye-tr.html', pl: 'secye-pl.html', es: 'secye-es.html' };
+  var LABELS = { en: 'English', tr: 'Türkçe', pl: 'Polski', es: 'Español' };
   var STORAGE_KEY = 'secye-lang';
 
   function supported() {
@@ -83,6 +86,7 @@
         text.textContent =
           detected === 'tr' ? 'Bu sayfayı Türkçe görüntüleyin.' :
           detected === 'pl' ? 'Zobacz tę stronę po polsku.' :
+          detected === 'es' ? 'Ver esta página en español.' :
           'View this page in ' + (LABELS[detected] || detected) + '.';
       }
       link.href = target + (window.location.hash || '');

@@ -1,0 +1,38 @@
+name: Link check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * 1'   # every Monday 06:00 UTC
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      # Fast, deterministic: validates the checkout itself (anchors, internal
+      # links, lang switch, lang.js <-> pages consistency) before it can ship.
+      - name: Check local checkout
+        run: python tools/check_links.py
+
+      # Also verifies every off-site link (Open Food Facts, dataprotection.ie, ...)
+      # still responds, and reports 404s early.
+      - name: Check external links
+        run: python tools/check_links.py --check-external
+
+      # Live truth, run on a schedule and on demand: the deployed site and the
+      # backend /legal/info map (every URL the app can show a user must exist).
+      - name: Check live site and backend /legal/info
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: |
+          python tools/check_links.py --base https://adadeo.ie \
+            --api https://api.adadeo.ie \
+            --check-external
