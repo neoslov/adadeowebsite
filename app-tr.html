@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secye — Etiketi okut, içinde ne var gör | Adadeo Ltd</title>
+    <meta name="description" content="Secye bir gıda ürününün barkodunu okur ve 100 üzerinden beslenme puanını, ultra işlenmiş gıda değerlendirmesini ve etikette gerçekten yazan katkı maddelerini gösterir. iOS ve Android'de ücretsiz.">
+    <link rel="canonical" href="https://adadeo.ie/app.html">
+    <meta property="og:title" content="Secye — Etiketi okut, içinde ne var gör">
+    <meta property="og:description" content="100 üzerinden beslenme puanı, ultra işlenmiş gıda değerlendirmesi ve etikette gerçekten yazan katkı maddeleri.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adadeo.ie/app.html">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --border-color: #334155;
+            --warn-bg: rgba(251, 191, 36, 0.08);
+            --warn-border: rgba(251, 191, 36, 0.35);
+            --warn-text: #fbbf24;
+            --success-color: #22c55e;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 0 20px;
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+        header {
+            max-width: 900px; margin: 0 auto; padding: 60px 0 20px 0;
+        }
+        .logo {
+            font-size: 1.5rem; font-weight: bold; color: var(--accent-color);
+            text-decoration: none; display: inline-block; margin-bottom: 8px;
+        }
+        h1 { font-size: 2.4rem; margin: 12px 0 16px 0; line-height: 1.2; }
+        .tagline { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 28px; }
+        main { max-width: 900px; margin: 0 auto; padding-bottom: 60px; }
+        .card {
+            background-color: var(--card-bg); border: 1px solid var(--border-color);
+            border-radius: 12px; padding: 24px; margin-bottom: 20px;
+        }
+        h2 { font-size: 1.35rem; margin-bottom: 12px; }
+        h3 { font-size: 1.05rem; margin-bottom: 8px; color: var(--accent-color); }
+        p { margin-bottom: 12px; }
+        .muted { color: var(--text-secondary); }
+        ul { margin: 0 0 12px 20px; }
+        li { margin-bottom: 8px; }
+        .store-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+        .store-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            background-color: var(--accent-color); color: #0f172a;
+            font-weight: 600; text-decoration: none;
+            padding: 12px 20px; border-radius: 8px;
+        }
+        .store-btn:hover { background-color: var(--accent-hover); }
+        .store-btn.pending {
+            background-color: transparent; color: var(--text-secondary);
+            border: 1px solid var(--border-color); cursor: default;
+        }
+        .notice {
+            background-color: var(--warn-bg); border: 1px solid var(--warn-border);
+            border-radius: 8px; padding: 14px 16px; margin: 16px 0; color: var(--warn-text);
+        }
+        .privacy-note { font-size: 0.92rem; }
+        footer {
+            max-width: 900px; margin: 0 auto; padding: 24px 0 50px 0;
+            border-top: 1px solid var(--border-color); color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        footer a { color: var(--accent-color); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        .lang { margin-bottom: 24px; font-size: 0.9rem; }
+        .lang a { color: var(--text-secondary); text-decoration: none; margin-right: 12px; }
+        .lang a:hover { color: var(--accent-color); }
+    </style>
+</head>
+<body>
+<header>
+    <a class="logo" href="index.html">← Adadeo Ltd</a>
+    <h1>Secye</h1>
+    <p class="tagline">Etiketi okut. İçinde ne var, gör.</p>
+
+    <div class="lang">
+        <a href="app-tr.html">Türkçe</a>
+        <a href="app.html" aria-current="page">English</a>
+        <a href="app-es.html">Español</a>
+        <a href="app-pl.html">Polski</a>
+        <a href="app-tr.html">Türkçe</a>
+    </div>
+</header>
+
+<main>
+    <div class="card">
+        <h2>Uygulamayı edin</h2>
+        <div class="store-row">
+            <!--
+                The store badges stay disabled until the listings are live. This
+                page is the share target in the app, so it has to resolve today
+                and stay correct after launch: a bare store URL would have been a
+                dead link in every shared message until the ID existed, and a
+                store link would have to be rewritten if the app ever moves.
+                Routing from here means neither problem reaches the user.
+            -->
+            <span class="store-btn pending" aria-disabled="true">iOS — yakında</span>
+            <span class="store-btn pending" aria-disabled="true">Android — yakında</span>
+        </div>
+        <div class="notice">Secye, yayın öncesi son testlerinde. Mağaza bağlantıları her bir kayıt yayınlandığı gün burada etkinleşecek — bu sayfayı yer imlerine ekleyin, sizi doğru mağazaya götürsün.</div>
+    </div>
+
+    <div class="card">
+        <h2>Neler yapıyor</h2>
+        <ul>
+            <li><strong>100 üzerinden puan</strong>, sadece bir harf değil — paylaşılan sonuç böylece kontrol edilebilir.</li>
+            <li><strong>Ultra işlenmiş gıda değerlendirmesi</strong>, içindekiler listesinde ne yazıyorsa ona dayanır.</li>
+            <li><strong>Gerçekten etikette olan katkı maddeleri</strong>, E koduyla adlandırılmış olarak; puan düşürmeyenler de bilinmeye değer.</li>
+            <li><strong>Etiketin fotoğrafını çekin</strong>, ürün hiçbir veritabanında yoksa, ve kendiniz ekleyin.</li>
+            <li><strong>Dört dil</strong>: İngilizce, Türkçe, Lehçe ve İspanyolca.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Puan nasıl hesaplanıyor</h2>
+        <p>Nutri-Score tek başına pek bir şey söylemez: şeker ve tuz bakımından neredeyse aynı iki etikette bir “A” ile bir “D” yan yana durabilir. Secye paneli 100 g üzerinden 100 puan üzerinden değerlendirir, ardından işlenme sinyalleri için içindekiler listesini okur; böylece sayı ve etiket üzerindeki kelimeler birlikte değerlendirilir.</p>
+        <p class="muted">Model sürümlüdür ve ağırlıkları yayımlanır; böylece bir puan güvenilerek kabul edilmek yerine yeniden üretilebilir ve tartışılabilir.</p>
+    </div>
+
+    <div class="card">
+        <h2>Gizlilik</h2>
+        <p class="privacy-note">Puan bir hesaplamadır, sağlık kaydı değildir; Secye bunu yapmak için kimliğinizi istemez. Eksik bir ürün için gönderdiğiniz fotoğraflar konum ve cihaz verilerinden arındırılır, kayıt tamamlandığında silinir ve en fazla altı ay saklanır. Hesabınızı ve verilerinizi uygulama içinden silebilirsiniz.</p>
+        <p class="privacy-note muted">
+            Full detail: <a href="secye-tr.html#privacy">Gizlilik politikası</a> ·
+            <a href="secye-tr.html#terms">Koşullar</a> ·
+            <a href="secye-tr.html#disclaimer">Sağlık uyarısı</a> ·
+            <a href="secye-tr.html#delete-account">Hesabını sil</a>
+        </p>
+    </div>
+</main>
+
+<footer>
+    <p>
+        Secye notları ve puanları bilgilendirme ve eğitim amaçlıdır. Açık ürün verilerine dayanır, tıbbi veya beslenme tavsiyesi değildir ve sertifikalı bir sağlık beyanı değildir. Her zaman fiziksel etiketi kontrol edin.
+    <p>
+        <a href="mailto:info@adadeo.ie">info@adadeo.ie</a> ·
+        <a href="secye.html">Hukuki ve gizlilik</a> ·
+        <a href="index.html">Adadeo Ltd</a>
+    </p>
+    <p class="muted">&copy; <span id="year">2026</span> Adadeo Ltd</p>
+</footer>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

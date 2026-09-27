@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secye — Zeskanuj etykietę i zobacz, co jest w środku | Adadeo Ltd</title>
+    <meta name="description" content="Secye skanuje kod kreskowy żywności i pokazuje ocenę żywieniową na 100, ocenę żywności ultraprzetworzonej oraz dodatki, które naprawdę są na etykiecie. Darmowo na iOS i Android.">
+    <link rel="canonical" href="https://adadeo.ie/app.html">
+    <meta property="og:title" content="Secye — Zeskanuj etykietę i zobacz, co jest w środku">
+    <meta property="og:description" content="Ocena żywieniowa na 100, ocena żywności ultraprzetworzonej oraz dodatki, które naprawdę są na etykiecie.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adadeo.ie/app.html">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --border-color: #334155;
+            --warn-bg: rgba(251, 191, 36, 0.08);
+            --warn-border: rgba(251, 191, 36, 0.35);
+            --warn-text: #fbbf24;
+            --success-color: #22c55e;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 0 20px;
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+        header {
+            max-width: 900px; margin: 0 auto; padding: 60px 0 20px 0;
+        }
+        .logo {
+            font-size: 1.5rem; font-weight: bold; color: var(--accent-color);
+            text-decoration: none; display: inline-block; margin-bottom: 8px;
+        }
+        h1 { font-size: 2.4rem; margin: 12px 0 16px 0; line-height: 1.2; }
+        .tagline { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 28px; }
+        main { max-width: 900px; margin: 0 auto; padding-bottom: 60px; }
+        .card {
+            background-color: var(--card-bg); border: 1px solid var(--border-color);
+            border-radius: 12px; padding: 24px; margin-bottom: 20px;
+        }
+        h2 { font-size: 1.35rem; margin-bottom: 12px; }
+        h3 { font-size: 1.05rem; margin-bottom: 8px; color: var(--accent-color); }
+        p { margin-bottom: 12px; }
+        .muted { color: var(--text-secondary); }
+        ul { margin: 0 0 12px 20px; }
+        li { margin-bottom: 8px; }
+        .store-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+        .store-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            background-color: var(--accent-color); color: #0f172a;
+            font-weight: 600; text-decoration: none;
+            padding: 12px 20px; border-radius: 8px;
+        }
+        .store-btn:hover { background-color: var(--accent-hover); }
+        .store-btn.pending {
+            background-color: transparent; color: var(--text-secondary);
+            border: 1px solid var(--border-color); cursor: default;
+        }
+        .notice {
+            background-color: var(--warn-bg); border: 1px solid var(--warn-border);
+            border-radius: 8px; padding: 14px 16px; margin: 16px 0; color: var(--warn-text);
+        }
+        .privacy-note { font-size: 0.92rem; }
+        footer {
+            max-width: 900px; margin: 0 auto; padding: 24px 0 50px 0;
+            border-top: 1px solid var(--border-color); color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        footer a { color: var(--accent-color); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        .lang { margin-bottom: 24px; font-size: 0.9rem; }
+        .lang a { color: var(--text-secondary); text-decoration: none; margin-right: 12px; }
+        .lang a:hover { color: var(--accent-color); }
+    </style>
+</head>
+<body>
+<header>
+    <a class="logo" href="index.html">← Adadeo Ltd</a>
+    <h1>Secye</h1>
+    <p class="tagline">Zeskanuj etykietę. Zobacz, co jest naprawdę w środku.</p>
+
+    <div class="lang">
+        <a href="app-pl.html">Polski</a>
+        <a href="app.html" aria-current="page">English</a>
+        <a href="app-es.html">Español</a>
+        <a href="app-pl.html">Polski</a>
+        <a href="app-tr.html">Türkçe</a>
+    </div>
+</header>
+
+<main>
+    <div class="card">
+        <h2>Pobierz aplikację</h2>
+        <div class="store-row">
+            <!--
+                The store badges stay disabled until the listings are live. This
+                page is the share target in the app, so it has to resolve today
+                and stay correct after launch: a bare store URL would have been a
+                dead link in every shared message until the ID existed, and a
+                store link would have to be rewritten if the app ever moves.
+                Routing from here means neither problem reaches the user.
+            -->
+            <span class="store-btn pending" aria-disabled="true">iOS — wkrótce</span>
+            <span class="store-btn pending" aria-disabled="true">Android — wkrótce</span>
+        </div>
+        <div class="notice">Secye jest w końcowych testach przed wydaniem. Odnośniki do sklepów włączą się tutaj w dniu publikacji każdej z nich — dodaj tę stronę do zakładek, a poprowadzi Cię do właściwego sklepu.</div>
+    </div>
+
+    <div class="card">
+        <h2>Co potrafi</h2>
+        <ul>
+            <li><strong>Ocena na 100 punktów</strong>, a nie tylko litera — dzięki temu wynik można sprawdzić.</li>
+            <li><strong>Ocena żywności ultraprzetworzonej</strong>, oparta na tym, co napisano w składzie.</li>
+            <li><strong>Dodatki, które naprawdę są</strong>, wymienione według kodów E, także te, które nie kosztują punktów, ale warto o nich wiedzieć.</li>
+            <li><strong>Zrób zdjęcie etykiety</strong>, gdy produktu nie ma w żadnej bazie, i dodaj go samodzielnie.</li>
+            <li><strong>Cztery języki</strong>: angielski, turecki, polski i hiszpański.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Jak liczona jest ocena</h2>
+        <p>Klasy Nutri-Score mówią niewiele: „A” i „D” mogą znaleźć się na etykietach z niemal identyczną zawartością cukru i soli. Secye punktuje panel na 100 g w skali 100, a następnie czyta listę składników w poszukiwaniu sygnałów przetworzenia, więc liczba i słowa na etykiecie są rozpatrywane razem.</p>
+        <p class="muted">Model ma wersję, a jego wagi są publikowane, dzięki czemu wynik można odtworzyć i przedyskutować, zamiast przyjmować go na zaufanie.</p>
+    </div>
+
+    <div class="card">
+        <h2>Prywatność</h2>
+        <p class="privacy-note">Ocena jest obliczeniem, nie dokumentacją medyczną, a Secye nie potrzebuje Twojej tożsamości, żeby jej policzyć. Zdjęcia wysyłane dla brakującego produktu są czyszczone z danych lokalizacji i urządzenia, usuwane po uzupełnieniu wpisu i przechowywane maksymalnie sześć miesięcy. Konto i dane możesz usunąć w aplikacji.</p>
+        <p class="privacy-note muted">
+            Full detail: <a href="secye-pl.html#privacy">Polityka prywatności</a> ·
+            <a href="secye-pl.html#terms">Regulamin</a> ·
+            <a href="secye-pl.html#disclaimer">Zastrzeża medyczne</a> ·
+            <a href="secye-pl.html#delete-account">Usuń konto</a>
+        </p>
+    </div>
+</main>
+
+<footer>
+    <p>
+        Oceny i wyniki Secye mają charakter informacyjny i edukacyjny. Oparte są na otwartych danych o produktach, nie są poradą medyczną ani dietetyczną i nie stanowią certyfikowanego świadczenia zdrowotnego. Zawsze sprawdzaj fizyczną etykietę.
+    <p>
+        <a href="mailto:info@adadeo.ie">info@adadeo.ie</a> ·
+        <a href="secye.html">Dokumenty prawne i prywatność</a> ·
+        <a href="index.html">Adadeo Ltd</a>
+    </p>
+    <p class="muted">&copy; <span id="year">2026</span> Adadeo Ltd</p>
+</footer>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
