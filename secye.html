@@ -177,7 +177,7 @@
             <div class="card">
                 <p class="meta">
                     <strong>Applies to:</strong> the Secye mobile application and adadeo.ie<br>
-                    <strong>Effective date:</strong> 14 September 2026 &nbsp;·&nbsp; <strong>Last updated:</strong> 14 September 2026<br>
+                    <strong>Effective date:</strong> 14 September 2026 &nbsp;·&nbsp; <strong>Last updated:</strong> 9 October 2026<br>
                     <strong>Data controller:</strong> Adadeo Ltd, The Arch, Northgate Street, Athenry, Co. Galway, H65 YK54, Ireland. Company no. 706941.
                 </p>
 
@@ -253,6 +253,16 @@
                             <td>Processing subscription payments. We never see your card details.</td>
                         </tr>
                         <tr>
+                            <td>Google (Gemini &amp; Google Translate)</td>
+                            <td>Every label scan sends the photograph of the label to Google's Gemini AI to read the ingredients and nutrition table. If you use Ask AI, the product's data and your question are sent; product text (name, brands, ingredients) may be sent to Google Translate to display it in your language. The scan photograph is used to read the label and is not stored.</td>
+                            <td>Reading labels (OCR), Ask AI answers, translating product text</td>
+                        </tr>
+                        <tr>
+                            <td>Plus Five Five, Inc. (Resend)</td>
+                            <td>Your account e-mail address and a password-reset link, when you request a password reset. Held in the United States.</td>
+                            <td>Sending password-reset e-mails</td>
+                        </tr>
+                        <tr>
                             <td>Sentry</td>
                             <td>Crash and error reports. Configured not to send personal data, request bodies or IP addresses.</td>
                             <td>Diagnosing crashes and faults</td>
@@ -273,9 +283,11 @@
                 <h4>7. How long we keep data</h4>
                 <ul>
                     <li><strong>Account data, favourites, history and shopping list</strong> — until you delete your account, after which they are erased immediately.</li>
-                    <li><strong>Scan analytics</strong> — retained in non-identifying form for up to 24 months.</li>
+                    <li><strong>Scan analytics</strong> — retained in non-identifying form for up to 60 days.</li>
                     <li><strong>Product corrections</strong> — the corrected text and nutrition values are kept as part of the shared catalogue, with no link to your identity once reviewed.</li>
-                    <li><strong>Photographs you upload with a correction</strong> — the product and label photographs you submit are used to read the label, then deleted: within 7 days if the submission is not completed, and within 6 months at the latest. Any location, device or time metadata is removed from the image before it is stored. Only a small thumbnail is kept, and only for as long as it is shown alongside the product.</li>
+                    <li><strong>Password-reset e-mails</strong> — sent through Resend, which holds the account address, the reset link and its own logs; Resend deletes these after 30 days.</li>
+                    <li><strong>Photographs taken during a scan</strong> — sent to Google's Gemini AI to read the label, then discarded; they are not stored.</li>
+                    <li><strong>Photographs you upload with a correction</strong> — the product and label photographs you submit are stored, used to read the label, then deleted. Any location, device or time metadata is removed from the image before it is stored. A photo that nothing references is collected after 7 days, and no photo is kept for more than 180 days. Only a small thumbnail is kept, and only for as long as it is shown alongside the product.</li>
                 </ul>
 
                 <h4>8. Your rights</h4>
@@ -346,7 +358,7 @@
                 <p>We aim to keep Secye available but do not guarantee uninterrupted service. We may change, suspend or discontinue features at any time. Where a change materially reduces a paid feature you have already bought, we will tell you.</p>
 
                 <h4>9. Intellectual property</h4>
-                <p>The Secye name, application, design and original content are owned by Adadeo Ltd. Open Food Facts data is used under the Open Database License (ODbL).</p>
+                <p>The Secye name, application, design and original content are owned by Adadeo Ltd. Open Food Facts data is used under the Open Database License (ODbL); product photographs are used under CC BY-SA 3.0.</p>
 
                 <h4>10. Disclaimer of warranties</h4>
                 <p>To the fullest extent permitted by law, Secye is provided “as is” and “as available”, without warranties of any kind, express or implied, including fitness for a particular purpose and accuracy of information.</p>
@@ -422,6 +434,7 @@
                 <ul>
                     <li><strong>Non-identifying scan analytics</strong> — barcode, match result, device OS and app version. These are never linked to your account, so they cannot be traced back to you and are not deleted.</li>
                     <li><strong>Product corrections you submitted</strong> — kept as part of the shared catalogue, with no link to your identity.</li>
+                    <li><strong>Photographs you submitted with a correction</strong> — not linked to your account, so deleting it does not remove them on demand; they are cleared automatically by the retention rules in the Privacy Policy.</li>
                     <li><strong>Your subscription</strong> — deleting your account does <em>not</em> cancel an active subscription. Cancel it in your Apple ID or Google Play account settings.</li>
                 </ul>
             </div>
@@ -460,7 +473,7 @@
             <a href="#delete-account">Delete Account</a>
             <a href="#support">Support</a>
         </div>
-        <div>© <span id="year">2026</span> Adadeo Ltd. Registered in Ireland. Product data from Open Food Facts, used under the ODbL.</div>
+        <div>© <span id="year">2026</span> Adadeo Ltd. Registered in Ireland. Product data from Open Food Facts, used under the ODbL. Product photographs under CC BY-SA 3.0.</div>
     </footer>
 
     <script src="lang.js"></script>

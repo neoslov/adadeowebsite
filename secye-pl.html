@@ -177,7 +177,7 @@
             <div class="card">
                 <p class="meta">
                     <strong>Dotyczy:</strong> aplikacji mobilnej Secye oraz adadeo.ie<br>
-                    <strong>Data wejścia w życie:</strong> 14 września 2026 &nbsp;·&nbsp; <strong>Ostatnia aktualizacja:</strong> 14 września 2026<br>
+                    <strong>Data wejścia w życie:</strong> 14 września 2026 &nbsp;·&nbsp; <strong>Ostatnia aktualizacja:</strong> 9 października 2026<br>
                     <strong>Administrator danych:</strong> Adadeo Ltd, The Arch, Northgate Street, Athenry, Co. Galway, H65 YK54, Irlandia. Nr spółki 706941.
                 </p>
 
@@ -253,6 +253,16 @@
                             <td>Przetwarzanie płatności subskrypcyjnych. Nigdy nie widzimy danych Twojej karty.</td>
                         </tr>
                         <tr>
+                            <td>Google (Gemini i Google Translate)</td>
+                            <td>Podczas każdego skanowania zdjęcie etykiety jest wysyłane do AI Gemini firmy Google w celu odczytania składników i tabeli wartości odżywczych. Jeśli korzystasz z Ask AI, wysyłane są dane produktu i Twoje pytanie; tekst produktu (nazwa, marka, skład) może zostać wysłany do Google Translate, aby wyświetlić go w Twoim języku. Zdjęcie ze skanowania służy do odczytania etykiety i nie jest przechowywane.</td>
+                            <td>Odczyt etykiet (OCR), odpowiedzi Ask AI, tłumaczenie tekstu produktu</td>
+                        </tr>
+                        <tr>
+                            <td>Plus Five Five, Inc. (Resend)</td>
+                            <td>Twój adres e-mail i link do zresetowania hasła, gdy poprosisz o ich wysłanie. Przechowywane w Stanach Zjednoczonych.</td>
+                            <td>Wysyłanie e-maili z resetowaniem hasła</td>
+                        </tr>
+                        <tr>
                             <td>Sentry</td>
                             <td>Raporty o awariach i błędach. Skonfigurowane tak, aby nie wysyłać danych osobowych, treści żądań ani adresów IP.</td>
                             <td>Diagnozowanie awarii i usterek</td>
@@ -273,9 +283,11 @@
                 <h4>7. Jak długo przechowujemy dane</h4>
                 <ul>
                     <li><strong>Dane konta, ulubione, historia i lista zakupów</strong> — do czasu usunięcia konta, po czym są natychmiast usuwane.</li>
-                    <li><strong>Analityka skanów</strong> — przechowywana w formie nieidentyfikującej przez maksymalnie 24 miesiące.</li>
+                    <li><strong>Analityka skanów</strong> — przechowywana w formie nieidentyfikującej przez maksymalnie 60 dni.</li>
                     <li><strong>Poprawki produktów</strong> — poprawiony tekst i wartości odżywcze są przechowywane jako część wspólnego katalogu, bez powiązania z Twoją tożsamością po weryfikacji.</li>
-                    <li><strong>Zdjęcia dołączane do poprawki</strong> — przesłane zdjęcia produktu i etykiety służą do odczytania etykiety, a następnie są usuwane: w ciągu 7 dni, jeśli zgłoszenie nie zostanie ukończone, i najpóźniej w ciągu 6 miesięcy. Przed zapisaniem z pliku usuwane są metadane lokalizacji, urządzenia i czasu. Zachowywane jest wyłącznie mała miniatura i tylko tak długo, jak długo jest wyświetlana przy produkcie.</li>
+                    <li><strong>E-maile z resetowaniem hasła</strong> — wysyłane za pośrednictwem Resend, który przechowuje adres konta, link do resetowania i własne logi; Resend usuwa je po 30 dniach.</li>
+                    <li><strong>Zdjęcia wykonane podczas skanowania</strong> — wysyłane do AI Gemini firmy Google w celu odczytania etykiety, a następnie odrzucane; nie są przechowywane.</li>
+                    <li><strong>Zdjęcia dołączane do poprawki</strong> — przesłane zdjęcia produktu i etykiety są przechowywane, wykorzystywane do odczytania etykiety, a następnie usuwane. Przed zapisaniem z pliku usuwane są metadane lokalizacji, urządzenia i czasu. Zdjęcie, do którego nic nie prowadzi, jest usuwane po 7 dniach, a żadne zdjęcie nie jest przechowywane dłużej niż 180 dni. Zachowywana jest wyłącznie mała miniatura i tylko tak długo, jak długo jest wyświetlana przy produkcie.</li>
                 </ul>
 
                 <h4>8. Twoje prawa</h4>
@@ -346,7 +358,7 @@
                 <p>Staramy się utrzymywać Secye w dostępności, ale nie gwarantujemy nieprzerwanego działania. Możemy w dowolnym momencie zmieniać, zawieszać lub wycofywać funkcje. Jeśli zmiana znacząco ograniczy płatną funkcję, którą już kupiłeś, poinformujemy Cię o tym.</p>
 
                 <h4>9. Własność intelektualna</h4>
-                <p>Nazwa Secye, aplikacja, projekt i oryginalne treści należą do Adadeo Ltd. Dane Open Food Facts są wykorzystywane na podstawie Open Database License (ODbL).</p>
+                <p>Nazwa Secye, aplikacja, projekt i oryginalne treści należą do Adadeo Ltd. Dane Open Food Facts są wykorzystywane na podstawie Open Database License (ODbL); zdjęcia produktów są wykorzystywane na podstawie CC BY-SA 3.0.</p>
 
                 <h4>10. Wyłączenie gwarancji</h4>
                 <p>W najszerszym zakresie dozwolonym przez prawo Secye jest dostarczane „tak jak jest” i „jak dostępne”, bez jakichkolwiek gwarancji, wyraźnych lub dorozumianych, w tym przydatności do określonego celu i dokładności informacji.</p>
@@ -422,6 +434,7 @@
                 <ul>
                     <li><strong>Nieidentyfikująca analityka skanów</strong> — kod kreskowy, wynik dopasowania, system operacyjny urządzenia i wersja aplikacji. Nigdy nie są one powiązane z Twoim kontem, więc nie można ich prześledzić do Ciebie i nie są usuwane.</li>
                     <li><strong>Zgłoszone przez Ciebie poprawki produktów</strong> — przechowywane jako część wspólnego katalogu, bez powiązania z Twoją tożsamością.</li>
+                    <li><strong>Zdjęcia przesłane z poprawką</strong> — nie są powiązane z Twoim kontem, więc usunięcie konta nie usuwa ich na żądanie; są czyszczone automatycznie zgodnie z zasadami przechowywania opisanymi w Polityce Prywatności.</li>
                     <li><strong>Twoja subskrypcja</strong> — usunięcie konta <em>nie</em> anuluje aktywnej subskrypcji. Anuluj ją w ustawieniach konta Apple ID lub Google Play.</li>
                 </ul>
             </div>
@@ -460,7 +473,7 @@
             <a href="#delete-account">Usunięcie konta</a>
             <a href="#support">Wsparcie</a>
         </div>
-        <div>© <span id="year">2026</span> Adadeo Ltd. Zarejestrowana w Irlandii. Dane o produktach z Open Food Facts na podstawie ODbL.</div>
+        <div>© <span id="year">2026</span> Adadeo Ltd. Zarejestrowana w Irlandii. Dane o produktach z Open Food Facts na podstawie ODbL. Zdjęcia produktów na podstawie CC BY-SA 3.0.</div>
     </footer>
 
     <script src="lang.js"></script>
