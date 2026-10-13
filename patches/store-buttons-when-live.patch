@@ -1,0 +1,185 @@
+diff --git a/app-es.html b/app-es.html
+index 6cd3953..704e91a 100644
+--- a/app-es.html
++++ b/app-es.html
+@@ -103,17 +103,16 @@
+         <h2>Consigue la app</h2>
+         <div class="store-row">
+             <!--
+-                The store badges stay disabled until the listings are live. This
+-                page is the share target in the app, so it has to resolve today
+-                and stay correct after launch: a bare store URL would have been a
+-                dead link in every shared message until the ID existed, and a
+-                store link would have to be rewritten if the app ever moves.
+-                Routing from here means neither problem reaches the user.
++                Store badges go live here once each listing is published. This page
++                is the share target in the app, so it must resolve today and stay
++                correct after launch. iOS listing id 6808254060; the Android URL is
++                the fixed package link and starts resolving the day the Play
++                listing goes live. Badge text is store chrome and identical in
++                every language, so it is not translated (see build_app_pages.py).
+             -->
+-            <span class="store-btn pending" aria-disabled="true">iOS — próximamente</span>
+-            <span class="store-btn pending" aria-disabled="true">Android — proximamente</span>
++            <a class="store-btn" href="https://apps.apple.com/ie/app/id6808254060">Download on the App Store</a>
++            <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.adadeo.secye">Get it on Google Play</a>
+         </div>
+-        <div class="notice">Secye está en las pruebas finales antes del lanzamiento. Los enlaces de las tiendas se activan aquí el día en que se publique cada ficha: guarda esta pagina y te llevara a la tienda correcta.</div>
+     </div>
+ 
+     <div class="card">
+diff --git a/app-pl.html b/app-pl.html
+index 695ffd5..3ca215d 100644
+--- a/app-pl.html
++++ b/app-pl.html
+@@ -103,17 +103,16 @@
+         <h2>Pobierz aplikację</h2>
+         <div class="store-row">
+             <!--
+-                The store badges stay disabled until the listings are live. This
+-                page is the share target in the app, so it has to resolve today
+-                and stay correct after launch: a bare store URL would have been a
+-                dead link in every shared message until the ID existed, and a
+-                store link would have to be rewritten if the app ever moves.
+-                Routing from here means neither problem reaches the user.
++                Store badges go live here once each listing is published. This page
++                is the share target in the app, so it must resolve today and stay
++                correct after launch. iOS listing id 6808254060; the Android URL is
++                the fixed package link and starts resolving the day the Play
++                listing goes live. Badge text is store chrome and identical in
++                every language, so it is not translated (see build_app_pages.py).
+             -->
+-            <span class="store-btn pending" aria-disabled="true">iOS — wkrótce</span>
+-            <span class="store-btn pending" aria-disabled="true">Android — wkrótce</span>
++            <a class="store-btn" href="https://apps.apple.com/ie/app/id6808254060">Download on the App Store</a>
++            <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.adadeo.secye">Get it on Google Play</a>
+         </div>
+-        <div class="notice">Secye jest w końcowych testach przed wydaniem. Odnośniki do sklepów włączą się tutaj w dniu publikacji każdej z nich — dodaj tę stronę do zakładek, a poprowadzi Cię do właściwego sklepu.</div>
+     </div>
+ 
+     <div class="card">
+diff --git a/app-tr.html b/app-tr.html
+index 0152119..62f0a9e 100644
+--- a/app-tr.html
++++ b/app-tr.html
+@@ -103,17 +103,16 @@
+         <h2>Uygulamayı edin</h2>
+         <div class="store-row">
+             <!--
+-                The store badges stay disabled until the listings are live. This
+-                page is the share target in the app, so it has to resolve today
+-                and stay correct after launch: a bare store URL would have been a
+-                dead link in every shared message until the ID existed, and a
+-                store link would have to be rewritten if the app ever moves.
+-                Routing from here means neither problem reaches the user.
++                Store badges go live here once each listing is published. This page
++                is the share target in the app, so it must resolve today and stay
++                correct after launch. iOS listing id 6808254060; the Android URL is
++                the fixed package link and starts resolving the day the Play
++                listing goes live. Badge text is store chrome and identical in
++                every language, so it is not translated (see build_app_pages.py).
+             -->
+-            <span class="store-btn pending" aria-disabled="true">iOS — yakında</span>
+-            <span class="store-btn pending" aria-disabled="true">Android — yakında</span>
++            <a class="store-btn" href="https://apps.apple.com/ie/app/id6808254060">Download on the App Store</a>
++            <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.adadeo.secye">Get it on Google Play</a>
+         </div>
+-        <div class="notice">Secye, yayın öncesi son testlerinde. Mağaza bağlantıları her bir kayıt yayınlandığı gün burada etkinleşecek — bu sayfayı yer imlerine ekleyin, sizi doğru mağazaya götürsün.</div>
+     </div>
+ 
+     <div class="card">
+diff --git a/app.html b/app.html
+index e108cc1..5ce59ef 100644
+--- a/app.html
++++ b/app.html
+@@ -102,20 +102,15 @@
+         <h2>Get the app</h2>
+         <div class="store-row">
+             <!--
+-                The store badges stay disabled until the listings are live. This
+-                page is the share target in the app, so it has to resolve today
+-                and stay correct after launch: a bare store URL would have been a
+-                dead link in every shared message until the ID existed, and a
+-                store link would have to be rewritten if the app ever moves.
+-                Routing from here means neither problem reaches the user.
++                Store badges go live here once each listing is published. This page
++                is the share target in the app, so it must resolve today and stay
++                correct after launch. iOS listing id 6808254060; the Android URL is
++                the fixed package link and starts resolving the day the Play
++                listing goes live. Badge text is store chrome and identical in
++                every language, so it is not translated (see build_app_pages.py).
+             -->
+-            <span class="store-btn pending" aria-disabled="true">iOS — coming soon</span>
+-            <span class="store-btn pending" aria-disabled="true">Android — coming soon</span>
+-        </div>
+-        <div class="notice">
+-            Secye is in final testing ahead of release. The store links switch on
+-            here the day each listing goes live — bookmark this page and it will
+-            take you to the right store.
++            <a class="store-btn" href="https://apps.apple.com/ie/app/id6808254060">Download on the App Store</a>
++            <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.adadeo.secye">Get it on Google Play</a>
+         </div>
+     </div>
+ 
+diff --git a/build_app_pages.py b/build_app_pages.py
+index 9b309ae..3552bcd 100644
+--- a/build_app_pages.py
++++ b/build_app_pages.py
+@@ -28,13 +28,6 @@ TRANSLATIONS = {
+         ),
+         "tagline": "Escanea una etiqueta. Mira qu\u00e9 lleva de verdad.",
+         "get_app": "Consigue la app",
+-        "ios_pending": "iOS — pr\u00f3ximamente",
+-        "android_pending": "Android — proximamente",
+-        "notice": (
+-            "Secye est\u00e1 en las pruebas finales antes del lanzamiento. Los enlaces "
+-            "de las tiendas se activan aqu\u00ed el d\u00eda en que se publique cada "
+-            "ficha: guarda esta pagina y te llevara a la tienda correcta."
+-        ),
+         "what_it_does": "Qu\u00e9 hace",
+         "w1_t": "Una puntuacion sobre 100",
+         "w1_b": ", no solo una letra, para que un resultado compartido se pueda comprobar.",
+@@ -97,13 +90,6 @@ TRANSLATIONS = {
+         ),
+         "tagline": "Zeskanuj etykietę. Zobacz, co jest naprawdę w środku.",
+         "get_app": "Pobierz aplikację",
+-        "ios_pending": "iOS — wkrótce",
+-        "android_pending": "Android — wkrótce",
+-        "notice": (
+-            "Secye jest w końcowych testach przed wydaniem. Odnośniki do sklepów "
+-            "włączą się tutaj w dniu publikacji każdej z nich — dodaj tę stronę "
+-            "do zakładek, a poprowadzi Cię do właściwego sklepu."
+-        ),
+         "what_it_does": "Co potrafi",
+         "w1_t": "Ocena na 100 punktów",
+         "w1_b": ", a nie tylko litera — dzięki temu wynik można sprawdzić.",
+@@ -162,13 +148,6 @@ TRANSLATIONS = {
+         ),
+         "tagline": "Etiketi okut. İçinde ne var, gör.",
+         "get_app": "Uygulamayı edin",
+-        "ios_pending": "iOS — yakında",
+-        "android_pending": "Android — yakında",
+-        "notice": (
+-            "Secye, yayın öncesi son testlerinde. Mağaza bağlantıları her bir "
+-            "kayıt yayınlandığı gün burada etkinleşecek — bu sayfayı yer imlerine "
+-            "ekleyin, sizi doğru mağazaya götürsün."
+-        ),
+         "what_it_does": "Neler yapıyor",
+         "w1_t": "100 üzerinden puan",
+         "w1_b": ", sadece bir harf değil — paylaşılan sonuç böylece kontrol edilebilir.",
+@@ -242,13 +221,8 @@ def build(code: str, t: dict) -> str:
+         out, count=1, flags=re.S,
+     )
+     out = out.replace("<h2>Get the app</h2>", f"<h2>{esc(t['get_app'])}</h2>", 1)
+-    out = out.replace("iOS — coming soon", esc(t["ios_pending"]), 1)
+-    out = out.replace("Android — coming soon", esc(t["android_pending"]), 1)
+-    out = re.sub(
+-        r'<div class="notice">.*?</div>',
+-        f'<div class="notice">{esc(t["notice"])}</div>',
+-        out, count=1, flags=re.S,
+-    )
++    # The store badges are store chrome — identical in every language — so they
++    # are not swapped here. Only the "Get the app" heading localises.
+     out = out.replace("<h2>What it does</h2>", f"<h2>{esc(t['what_it_does'])}</h2>", 1)
+     out = out.replace(
+         '<li><strong>A score out of 100</strong>, not just a letter grade — so a shared result can actually be checked.</li>',
