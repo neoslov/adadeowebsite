@@ -495,5 +495,25 @@
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
+    <script>
+        // Password-reset deep link: the email carries an https:// link so it is
+        // clickable. This page reads the token from the URL and redirects into
+        // the Secye app's secye://reset-password?token=... confirm screen.
+        (function () {
+            var hash = window.location.hash || '';
+            var search = window.location.search || '';
+            var token = '';
+            var m = hash.match(/[?&]token=([^&]*)/);
+            if (!m) {
+                m = search.match(/[?&]token=([^&]*)/);
+            }
+            if (m && hash.indexOf('reset-password') !== -1) {
+                token = decodeURIComponent(m[1]);
+                if (token) {
+                    window.location.replace('secye://reset-password?token=' + token);
+                }
+            }
+        })();
+    </script>
 </body>
 </html>
